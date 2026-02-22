@@ -287,18 +287,26 @@ export default function LandingPage() {
                 <strong>Our Vision:</strong> A world where technology expands the human spirit instead of replacing it. We seek the "gradient" between cold logic and warm creativity.
               </p>
             </div>
-            <div className="mt-10 flex flex-wrap gap-4">
-              <div className="p-4 border-l-4 border-[#ffde00]">
-                <span className="block font-black text-2xl">100%</span>
-                <span className="text-xs uppercase font-bold text-gray-400 tracking-widest">Innovation focus</span>
+            <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-6">
+              <div className="text-center md:text-left">
+                <span className="text-4xl font-black text-gray-200">01</span>
+                <p className="text-lg font-black mt-2">"CLIENT"</p>
+                <p className="text-xs uppercase font-bold text-gray-400 tracking-widest">First Priority</p>
               </div>
-              <div className="p-4 border-l-4 border-[#00c6ff]">
-                <span className="block font-black text-2xl">Global</span>
-                <span className="text-xs uppercase font-bold text-gray-400 tracking-widest">Network</span>
+              <div className="text-center md:text-left">
+                <span className="text-4xl font-black text-gray-200">02</span>
+                <p className="text-lg font-black mt-2">"EXCELLENCE"</p>
+                <p className="text-xs uppercase font-bold text-gray-400 tracking-widest">Always Deliver</p>
               </div>
-              <div className="p-4 border-l-4 border-[#ff5e00]">
-                <span className="block font-black text-2xl">Trust</span>
-                <span className="text-xs uppercase font-bold text-gray-400 tracking-widest">Be Transparent</span>
+              <div className="text-center md:text-left">
+                <span className="text-4xl font-black text-gray-200">03</span>
+                <p className="text-lg font-black mt-2">"INNOVATION"</p>
+                <p className="text-xs uppercase font-bold text-gray-400 tracking-widest">Push Limits</p>
+              </div>
+              <div className="text-center md:text-left">
+                <span className="text-4xl font-black text-gray-200">04</span>
+                <p className="text-lg font-black mt-2">"TRUST"</p>
+                <p className="text-xs uppercase font-bold text-gray-400 tracking-widest">Be Transparent</p>
               </div>
             </div>
           </div>
@@ -395,15 +403,14 @@ export default function LandingPage() {
       </section>
 
       {/* Footer */}
-      <footer className="py-20 text-center border-t border-gray-100" data-testid="footer">
-        <div className="text-4xl font-black tracking-tighter mb-8">QRADIENT.</div>
-        <div className="flex justify-center space-x-6 mb-8 uppercase text-[10px] tracking-[0.2em] font-bold text-gray-400">
+      <footer className="py-10 text-center border-t border-gray-100" data-testid="footer">
+        <div className="text-2xl font-black tracking-tighter mb-4">QRADIENT.</div>
+        <div className="flex justify-center space-x-6 mb-4 uppercase text-[10px] tracking-[0.2em] font-bold text-gray-400">
           <a href="#" className="hover:text-black transition-colors">Instagram</a>
           <a href="#" className="hover:text-black transition-colors">LinkedIn</a>
           <a href="#" className="hover:text-black transition-colors">Twitter</a>
         </div>
-        <p className="text-xs text-gray-300">2024 QRADIENT CONSULTING. DESIGNED BY HUMANITY.</p>
-        <a href="/admin" className="text-xs text-gray-300 hover:text-gray-500 mt-4 inline-block" data-testid="admin-link">Admin</a>
+        <p className="text-xs text-gray-300">© 2026 QRADIENT. ALL RIGHTS RESERVED.</p>
       </footer>
 
       {/* Job Detail Modal */}
