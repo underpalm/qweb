@@ -219,7 +219,8 @@ export default function AdminDashboard() {
           <a href="/" className="text-gray-400 hover:text-white transition-colors" data-testid="back-to-site">
             <ArrowLeft size={20} />
           </a>
-          <h1 className="text-2xl font-black tracking-tighter">QRADIENT ADMIN</h1>
+          <a href="/" className="text-2xl font-black tracking-tighter hover:text-[#ffde00] transition-colors">QRADIENT.</a>
+          <span className="text-gray-500">/ Admin</span>
         </div>
       </header>
 
