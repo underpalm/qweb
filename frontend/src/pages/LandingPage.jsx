@@ -79,11 +79,27 @@ export default function LandingPage() {
       toast.error("Please fill all required fields");
       return;
     }
+    if (!applicationForm.cv_file) {
+      toast.error("Please upload your CV");
+      return;
+    }
     setIsSubmitting(true);
     try {
-      await axios.post(`${API}/applications`, {
-        ...applicationForm,
-        job_id: selectedJob.id
+      const formData = new FormData();
+      formData.append("job_id", selectedJob.id);
+      formData.append("name", applicationForm.name);
+      formData.append("email", applicationForm.email);
+      formData.append("phone", applicationForm.phone || "");
+      formData.append("linkedin", applicationForm.linkedin || "");
+      formData.append("portfolio", applicationForm.portfolio || "");
+      formData.append("cover_letter", applicationForm.cover_letter);
+      formData.append("experience_years", applicationForm.experience_years);
+      if (applicationForm.cv_file) {
+        formData.append("cv_file", applicationForm.cv_file);
+      }
+      
+      await axios.post(`${API}/applications/upload`, formData, {
+        headers: { "Content-Type": "multipart/form-data" }
       });
       toast.success("Application submitted successfully!");
       setShowApplicationModal(false);
