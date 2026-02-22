@@ -4,6 +4,8 @@
 Build a website for an AI Consulting company called "Qradient" with:
 - Full-screen hero with video/image background
 - About section with mission/vision
+- Services section with AI consulting offerings
+- Partner/technology showcase (scrolling marquee)
 - Jobs section with detailed job listings and application functionality
 - Contact form that saves to database
 - Admin panel to manage contacts and applications
@@ -15,12 +17,15 @@ Build a website for an AI Consulting company called "Qradient" with:
 3. **Admin Users** - Managing contacts and applications
 
 ## Core Requirements
-- Landing page with Hero, About, Jobs, Contact sections
+- Landing page with Hero, Services, About, Jobs, Contact sections
 - MongoDB-backed contact form
 - Job listings with apply functionality
 - Admin dashboard for data management
+- CV/Resume file upload for applications
 
-## What's Been Implemented (22 Feb 2026)
+## What's Been Implemented
+
+### Session 1 (22 Feb 2026)
 - ✅ Full-stack React + FastAPI + MongoDB architecture
 - ✅ Hero section with gradient text and full-screen background
 - ✅ Glass-morphism navigation and cards
@@ -34,30 +39,42 @@ Build a website for an AI Consulting company called "Qradient" with:
 - ✅ Application status workflow (new → reviewing → interviewed → accepted/rejected)
 - ✅ Job create/edit/toggle/delete functionality
 
+### Session 2 (Dec 2025)
+- ✅ Services section with 4 service cards
+- ✅ Partner/Technology scrolling marquee (OpenAI, AWS, NVIDIA, Google Cloud, Azure, Snowflake, Databricks, Hugging Face)
+- ✅ Gradient fade effects on marquee edges for professional look
+- ✅ Full-width team/workspace images section (above Contact)
+- ✅ Fixed images section to be truly full-width (no side padding)
+- ✅ CV/Resume file upload functionality in job applications
+- ✅ Mobile responsive hamburger menu
+- ✅ Privacy Policy modal
+- ✅ Impressum modal (German legal requirements)
+
 ## Tech Stack
-- Frontend: React 19, Tailwind CSS, Shadcn/UI
+- Frontend: React 19, Tailwind CSS, Shadcn/UI, Lucide React
 - Backend: FastAPI, Motor (async MongoDB)
 - Database: MongoDB
 
 ## API Endpoints
-- `/api/contacts` - Contact messages CRUD
-- `/api/jobs` - Job listings CRUD
-- `/api/applications` - Job applications CRUD
-- `/api/stats` - Dashboard statistics
-- `/api/seed` - Initial data seeding
+- `POST /api/contacts` - Submit contact form
+- `GET /api/jobs` - Get job listings
+- `POST /api/applications/upload` - Submit job application with CV
+- `GET /api/admin/stats` - Dashboard statistics
+- `GET /api/admin/cv/{filename}` - Download uploaded CV
+- `POST /api/seed` - Initial data seeding
 
 ## P0/P1/P2 Features Remaining
 ### P1 (Nice to have)
 - Email notifications for new applications
-- PDF resume upload
 - Search/filter in admin
+- Multiple language support (German/English toggle)
 
 ### P2 (Future)
-- Multi-language support
 - Analytics dashboard
 - Public job board page
+- Newsletter subscription
 
 ## Next Tasks
 1. Add email notifications (SendGrid/Resend integration)
-2. File upload for resumes
-3. Add search functionality in admin
+2. Add search functionality in admin
+3. Multi-language support
