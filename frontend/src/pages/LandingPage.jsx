@@ -370,13 +370,13 @@ export default function LandingPage() {
               </div>
             </div>
           </div>
-          <div className="relative h-[50vh] md:h-[70vh]">
+          <div className="relative h-[40vh] sm:h-[50vh] md:h-[60vh] lg:h-[70vh]">
             <img 
               src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=2070&auto=format&fit=crop" 
               alt="Modern Workspace"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-8 md:p-12">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6 sm:p-8 md:p-12">
               <div>
                 <p className="text-white text-xs uppercase tracking-widest font-bold mb-2">Our Space</p>
                 <p className="text-white/80 text-sm md:text-base">Where ideas come to life</p>
