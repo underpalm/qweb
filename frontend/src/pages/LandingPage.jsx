@@ -11,6 +11,8 @@ export default function LandingPage() {
   const [selectedJob, setSelectedJob] = useState(null);
   const [showJobModal, setShowJobModal] = useState(false);
   const [showApplicationModal, setShowApplicationModal] = useState(false);
+  const [showPrivacyModal, setShowPrivacyModal] = useState(false);
+  const [showImpressumModal, setShowImpressumModal] = useState(false);
   const [contactForm, setContactForm] = useState({ name: "", email: "", message: "" });
   const [applicationForm, setApplicationForm] = useState({
     name: "", email: "", phone: "", linkedin: "", portfolio: "", cover_letter: "", experience_years: 0, cv_file: null
