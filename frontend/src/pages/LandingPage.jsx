@@ -143,7 +143,7 @@ export default function LandingPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#1a1a1a] text-[#1a1a1a] flex flex-col">
+    <div className="min-h-screen bg-[#fafafa] text-[#1a1a1a] flex flex-col">
       {/* Navigation */}
       <nav 
         data-testid="main-navigation"
@@ -189,7 +189,7 @@ export default function LandingPage() {
       )}
 
       {/* Main Content */}
-      <main className="flex-grow bg-[#fafafa]">
+      <main className="flex-grow">
       {/* Hero Section */}
       <header id="home" className="hero-full-screen" data-testid="hero-section">
         <img 
