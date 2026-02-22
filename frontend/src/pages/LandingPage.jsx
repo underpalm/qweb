@@ -601,6 +601,113 @@ export default function LandingPage() {
           </form>
         </DialogContent>
       </Dialog>
+
+      {/* Privacy Policy Modal */}
+      <Dialog open={showPrivacyModal} onOpenChange={setShowPrivacyModal}>
+        <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto bg-white border-2 border-black shadow-2xl" data-testid="privacy-modal">
+          <DialogHeader>
+            <DialogTitle className="text-2xl font-black tracking-tight">Privacy Policy</DialogTitle>
+          </DialogHeader>
+          <div className="space-y-6 text-gray-600 leading-relaxed mt-4">
+            <section>
+              <h3 className="font-bold text-lg text-black mb-2">1. Introduction</h3>
+              <p>At Qradient, we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.</p>
+            </section>
+            
+            <section>
+              <h3 className="font-bold text-lg text-black mb-2">2. Information We Collect</h3>
+              <p>We may collect personal information that you voluntarily provide to us when you:</p>
+              <ul className="list-disc ml-6 mt-2 space-y-1">
+                <li>Fill out contact forms</li>
+                <li>Apply for job positions</li>
+                <li>Subscribe to our newsletter</li>
+                <li>Request information about our services</li>
+              </ul>
+            </section>
+            
+            <section>
+              <h3 className="font-bold text-lg text-black mb-2">3. How We Use Your Information</h3>
+              <p>We use the information we collect to:</p>
+              <ul className="list-disc ml-6 mt-2 space-y-1">
+                <li>Respond to your inquiries and requests</li>
+                <li>Process job applications</li>
+                <li>Improve our website and services</li>
+                <li>Send you relevant updates (with your consent)</li>
+              </ul>
+            </section>
+            
+            <section>
+              <h3 className="font-bold text-lg text-black mb-2">4. Data Security</h3>
+              <p>We implement appropriate technical and organizational security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction.</p>
+            </section>
+            
+            <section>
+              <h3 className="font-bold text-lg text-black mb-2">5. Your Rights</h3>
+              <p>You have the right to access, correct, or delete your personal data. Contact us at privacy@qradient.ai for any requests regarding your data.</p>
+            </section>
+            
+            <section>
+              <h3 className="font-bold text-lg text-black mb-2">6. Contact Us</h3>
+              <p>If you have questions about this Privacy Policy, please contact us at:</p>
+              <p className="mt-2 font-semibold">privacy@qradient.ai</p>
+            </section>
+          </div>
+        </DialogContent>
+      </Dialog>
+
+      {/* Impressum Modal */}
+      <Dialog open={showImpressumModal} onOpenChange={setShowImpressumModal}>
+        <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto bg-white border-2 border-black shadow-2xl" data-testid="impressum-modal">
+          <DialogHeader>
+            <DialogTitle className="text-2xl font-black tracking-tight">Impressum</DialogTitle>
+          </DialogHeader>
+          <div className="space-y-6 text-gray-600 leading-relaxed mt-4">
+            <section>
+              <h3 className="font-bold text-lg text-black mb-2">Angaben gemäß § 5 TMG</h3>
+              <p className="font-semibold">Qradient Consulting GmbH</p>
+              <p>Musterstraße 123</p>
+              <p>10115 Berlin</p>
+              <p>Deutschland</p>
+            </section>
+            
+            <section>
+              <h3 className="font-bold text-lg text-black mb-2">Kontakt</h3>
+              <p>Telefon: +49 30 123456789</p>
+              <p>E-Mail: hello@qradient.ai</p>
+            </section>
+            
+            <section>
+              <h3 className="font-bold text-lg text-black mb-2">Vertreten durch</h3>
+              <p>Geschäftsführer: Max Mustermann</p>
+            </section>
+            
+            <section>
+              <h3 className="font-bold text-lg text-black mb-2">Registereintrag</h3>
+              <p>Eintragung im Handelsregister</p>
+              <p>Registergericht: Amtsgericht Berlin-Charlottenburg</p>
+              <p>Registernummer: HRB 123456</p>
+            </section>
+            
+            <section>
+              <h3 className="font-bold text-lg text-black mb-2">Umsatzsteuer-ID</h3>
+              <p>Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:</p>
+              <p>DE 123456789</p>
+            </section>
+            
+            <section>
+              <h3 className="font-bold text-lg text-black mb-2">Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h3>
+              <p>Max Mustermann</p>
+              <p>Musterstraße 123</p>
+              <p>10115 Berlin</p>
+            </section>
+            
+            <section>
+              <h3 className="font-bold text-lg text-black mb-2">Haftungsausschluss</h3>
+              <p>Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.</p>
+            </section>
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
