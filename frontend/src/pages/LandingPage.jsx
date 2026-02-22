@@ -270,29 +270,35 @@ export default function LandingPage() {
             <h3 className="text-center text-xs font-bold tracking-[0.3em] uppercase text-gray-400 mb-8">
               Tools, Partnerships & Technologies
             </h3>
-            <div className="relative overflow-hidden py-4">
-              <div className="flex animate-marquee">
-                {/* First set of logos */}
-                <div className="flex items-center gap-20 mx-10 shrink-0">
-                  <span className="text-2xl font-black text-gray-300 hover:text-gray-600 transition-colors">OpenAI</span>
-                  <span className="text-2xl font-black text-gray-300 hover:text-gray-600 transition-colors">AWS</span>
-                  <span className="text-2xl font-black text-gray-300 hover:text-gray-600 transition-colors">NVIDIA</span>
-                  <span className="text-2xl font-black text-gray-300 hover:text-gray-600 transition-colors">Google Cloud</span>
-                  <span className="text-2xl font-black text-gray-300 hover:text-gray-600 transition-colors">Azure</span>
-                  <span className="text-2xl font-black text-gray-300 hover:text-gray-600 transition-colors">Snowflake</span>
-                  <span className="text-2xl font-black text-gray-300 hover:text-gray-600 transition-colors">Databricks</span>
-                  <span className="text-2xl font-black text-gray-300 hover:text-gray-600 transition-colors">Hugging Face</span>
-                </div>
-                {/* Duplicate set for seamless loop */}
-                <div className="flex items-center gap-20 mx-10 shrink-0">
-                  <span className="text-2xl font-black text-gray-300 hover:text-gray-600 transition-colors">OpenAI</span>
-                  <span className="text-2xl font-black text-gray-300 hover:text-gray-600 transition-colors">AWS</span>
-                  <span className="text-2xl font-black text-gray-300 hover:text-gray-600 transition-colors">NVIDIA</span>
-                  <span className="text-2xl font-black text-gray-300 hover:text-gray-600 transition-colors">Google Cloud</span>
-                  <span className="text-2xl font-black text-gray-300 hover:text-gray-600 transition-colors">Azure</span>
-                  <span className="text-2xl font-black text-gray-300 hover:text-gray-600 transition-colors">Snowflake</span>
-                  <span className="text-2xl font-black text-gray-300 hover:text-gray-600 transition-colors">Databricks</span>
-                  <span className="text-2xl font-black text-gray-300 hover:text-gray-600 transition-colors">Hugging Face</span>
+            <div className="relative py-4">
+              {/* Gradient fade on edges */}
+              <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#f0f0f0] to-transparent z-10 pointer-events-none"></div>
+              <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[#f0f0f0] to-transparent z-10 pointer-events-none"></div>
+              
+              <div className="overflow-hidden">
+                <div className="flex animate-marquee">
+                  {/* First set of logos */}
+                  <div className="flex items-center gap-16 md:gap-20 px-8 shrink-0">
+                    <span className="text-xl md:text-2xl font-black text-gray-300 hover:text-gray-600 transition-colors whitespace-nowrap">OpenAI</span>
+                    <span className="text-xl md:text-2xl font-black text-gray-300 hover:text-gray-600 transition-colors whitespace-nowrap">AWS</span>
+                    <span className="text-xl md:text-2xl font-black text-gray-300 hover:text-gray-600 transition-colors whitespace-nowrap">NVIDIA</span>
+                    <span className="text-xl md:text-2xl font-black text-gray-300 hover:text-gray-600 transition-colors whitespace-nowrap">Google Cloud</span>
+                    <span className="text-xl md:text-2xl font-black text-gray-300 hover:text-gray-600 transition-colors whitespace-nowrap">Azure</span>
+                    <span className="text-xl md:text-2xl font-black text-gray-300 hover:text-gray-600 transition-colors whitespace-nowrap">Snowflake</span>
+                    <span className="text-xl md:text-2xl font-black text-gray-300 hover:text-gray-600 transition-colors whitespace-nowrap">Databricks</span>
+                    <span className="text-xl md:text-2xl font-black text-gray-300 hover:text-gray-600 transition-colors whitespace-nowrap">Hugging Face</span>
+                  </div>
+                  {/* Duplicate set for seamless loop */}
+                  <div className="flex items-center gap-16 md:gap-20 px-8 shrink-0">
+                    <span className="text-xl md:text-2xl font-black text-gray-300 hover:text-gray-600 transition-colors whitespace-nowrap">OpenAI</span>
+                    <span className="text-xl md:text-2xl font-black text-gray-300 hover:text-gray-600 transition-colors whitespace-nowrap">AWS</span>
+                    <span className="text-xl md:text-2xl font-black text-gray-300 hover:text-gray-600 transition-colors whitespace-nowrap">NVIDIA</span>
+                    <span className="text-xl md:text-2xl font-black text-gray-300 hover:text-gray-600 transition-colors whitespace-nowrap">Google Cloud</span>
+                    <span className="text-xl md:text-2xl font-black text-gray-300 hover:text-gray-600 transition-colors whitespace-nowrap">Azure</span>
+                    <span className="text-xl md:text-2xl font-black text-gray-300 hover:text-gray-600 transition-colors whitespace-nowrap">Snowflake</span>
+                    <span className="text-xl md:text-2xl font-black text-gray-300 hover:text-gray-600 transition-colors whitespace-nowrap">Databricks</span>
+                    <span className="text-xl md:text-2xl font-black text-gray-300 hover:text-gray-600 transition-colors whitespace-nowrap">Hugging Face</span>
+                  </div>
                 </div>
               </div>
             </div>
