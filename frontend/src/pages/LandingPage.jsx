@@ -476,6 +476,7 @@ export default function LandingPage() {
           </div>
         </div>
       </section>
+      </main>
 
       {/* Footer */}
       <footer className="py-8 text-center border-t border-gray-100 !pt-6 !pb-4 mt-auto" data-testid="footer">
