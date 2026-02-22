@@ -289,26 +289,26 @@ export default function LandingPage() {
                 <strong>Our Vision:</strong> A world where technology expands the human spirit instead of replacing it. We seek the "gradient" between cold logic and warm creativity.
               </p>
             </div>
-            <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10">
               <div className="p-4 border-l-4 border-[#ffde00]">
-                <span className="text-4xl font-black text-gray-200">01</span>
-                <p className="text-lg font-black mt-2">CLIENT</p>
-                <p className="text-xs uppercase font-bold text-gray-400 tracking-widest">First Priority</p>
+                <span className="text-3xl font-black text-gray-200">01</span>
+                <p className="text-base font-black mt-1">CLIENT</p>
+                <p className="text-[10px] uppercase font-bold text-gray-400 tracking-widest mt-1">First Priority</p>
               </div>
               <div className="p-4 border-l-4 border-[#00c6ff]">
-                <span className="text-4xl font-black text-gray-200">02</span>
-                <p className="text-lg font-black mt-2">EXCELLENCE</p>
-                <p className="text-xs uppercase font-bold text-gray-400 tracking-widest">Always Deliver</p>
+                <span className="text-3xl font-black text-gray-200">02</span>
+                <p className="text-base font-black mt-1">EXCELLENCE</p>
+                <p className="text-[10px] uppercase font-bold text-gray-400 tracking-widest mt-1">Always Deliver</p>
               </div>
               <div className="p-4 border-l-4 border-[#ff5e00]">
-                <span className="text-4xl font-black text-gray-200">03</span>
-                <p className="text-lg font-black mt-2">INNOVATION</p>
-                <p className="text-xs uppercase font-bold text-gray-400 tracking-widest">Push Limits</p>
+                <span className="text-3xl font-black text-gray-200">03</span>
+                <p className="text-base font-black mt-1">INNOVATION</p>
+                <p className="text-[10px] uppercase font-bold text-gray-400 tracking-widest mt-1">Push Limits</p>
               </div>
               <div className="p-4 border-l-4 border-[#1a1a1a]">
-                <span className="text-4xl font-black text-gray-200">04</span>
-                <p className="text-lg font-black mt-2">TRUST</p>
-                <p className="text-xs uppercase font-bold text-gray-400 tracking-widest">Be Transparent</p>
+                <span className="text-3xl font-black text-gray-200">04</span>
+                <p className="text-base font-black mt-1">TRUST</p>
+                <p className="text-[10px] uppercase font-bold text-gray-400 tracking-widest mt-1">Be Transparent</p>
               </div>
             </div>
           </div>
