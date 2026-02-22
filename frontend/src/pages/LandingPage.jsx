@@ -356,7 +356,7 @@ export default function LandingPage() {
 
       {/* Team/Work Images Section - Full Width */}
       <section className="fade-in-up full-width-section" data-testid="images-section">
-        <div className="grid md:grid-cols-2 w-full">
+        <div className="grid md:grid-cols-2 w-full gap-1 md:gap-2">
           <div className="relative h-[50vh] md:h-[70vh]">
             <img 
               src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop" 
@@ -480,7 +480,7 @@ export default function LandingPage() {
         <div className="text-2xl font-black tracking-tighter mb-4">QRADIENT.</div>
         <div className="flex justify-center space-x-6 mb-4 uppercase text-[10px] tracking-[0.2em] font-bold text-gray-400">
           <a href="#" className="hover:text-black transition-colors">Instagram</a>
-          <a href="#" className="hover:text-black transition-colors">LinkedIn</a>
+          <a href="https://www.linkedin.com/company/qradient" target="_blank" rel="noopener noreferrer" className="hover:text-black transition-colors">LinkedIn</a>
           <a href="#" className="hover:text-black transition-colors">Twitter</a>
         </div>
         <div className="flex justify-center space-x-6 mb-4 text-xs text-gray-400">
