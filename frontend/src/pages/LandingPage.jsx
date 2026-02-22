@@ -131,6 +131,7 @@ export default function LandingPage() {
         <div className="text-2xl font-black tracking-tighter" data-testid="logo">QRADIENT.</div>
         <div className="hidden md:flex space-x-8 uppercase text-xs tracking-widest font-bold">
           <a href="#home" className="nav-link" data-testid="nav-home">Home</a>
+          <a href="#services" className="nav-link" data-testid="nav-services">Services</a>
           <a href="#about" className="nav-link" data-testid="nav-about">About</a>
           <a href="#jobs" className="nav-link" data-testid="nav-jobs">Join Us</a>
           <a href="#contact" className="nav-link" data-testid="nav-contact">Contact</a>
