@@ -348,6 +348,40 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* Team/Work Images Section */}
+      <section className="py-16 bg-white fade-in-up" data-testid="images-section">
+        <div className="container mx-auto max-w-6xl px-4">
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="relative overflow-hidden rounded-[40px] group">
+              <img 
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop" 
+                alt="Team Collaboration"
+                className="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
+                <div>
+                  <p className="text-white text-xs uppercase tracking-widest font-bold mb-2">Our Team</p>
+                  <p className="text-white/80 text-sm">Collaborative innovation at its finest</p>
+                </div>
+              </div>
+            </div>
+            <div className="relative overflow-hidden rounded-[40px] group">
+              <img 
+                src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=2070&auto=format&fit=crop" 
+                alt="Modern Workspace"
+                className="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
+                <div>
+                  <p className="text-white text-xs uppercase tracking-widest font-bold mb-2">Our Space</p>
+                  <p className="text-white/80 text-sm">Where ideas come to life</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section id="contact" className="fade-in-up" data-testid="contact-section">
         <div className="container mx-auto max-w-4xl glass-card p-8 md:p-12 shadow-2xl bg-white border-2 border-black">
