@@ -13,8 +13,9 @@ export default function LandingPage() {
   const [showApplicationModal, setShowApplicationModal] = useState(false);
   const [contactForm, setContactForm] = useState({ name: "", email: "", message: "" });
   const [applicationForm, setApplicationForm] = useState({
-    name: "", email: "", phone: "", linkedin: "", portfolio: "", cover_letter: "", experience_years: 0
+    name: "", email: "", phone: "", linkedin: "", portfolio: "", cover_letter: "", experience_years: 0, cv_file: null
   });
+  const [cvFileName, setCvFileName] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
@@ -86,7 +87,8 @@ export default function LandingPage() {
       });
       toast.success("Application submitted successfully!");
       setShowApplicationModal(false);
-      setApplicationForm({ name: "", email: "", phone: "", linkedin: "", portfolio: "", cover_letter: "", experience_years: 0 });
+      setApplicationForm({ name: "", email: "", phone: "", linkedin: "", portfolio: "", cover_letter: "", experience_years: 0, cv_file: null });
+      setCvFileName("");
     } catch (e) {
       toast.error("Failed to submit application");
     }
@@ -128,7 +130,7 @@ export default function LandingPage() {
         data-testid="main-navigation"
         className="fixed top-4 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-7xl z-50 glass-card px-8 py-6 flex justify-between items-center"
       >
-        <div className="text-2xl font-black tracking-tighter" data-testid="logo">QRADIENT.</div>
+        <a href="/" className="text-2xl font-black tracking-tighter hover:text-[#ffde00] transition-colors" data-testid="logo">QRADIENT.</a>
         <div className="hidden md:flex space-x-8 uppercase text-xs tracking-widest font-bold">
           <a href="#home" className="nav-link" data-testid="nav-home">Home</a>
           <a href="#services" className="nav-link" data-testid="nav-services">Services</a>
@@ -421,7 +423,7 @@ export default function LandingPage() {
 
       {/* Application Modal */}
       <Dialog open={showApplicationModal} onOpenChange={setShowApplicationModal}>
-        <DialogContent className="max-w-xl max-h-[90vh] overflow-y-auto" data-testid="application-modal">
+        <DialogContent className="max-w-xl max-h-[90vh] overflow-y-auto bg-white border-2 border-black shadow-2xl" data-testid="application-modal">
           <DialogHeader>
             <DialogTitle className="text-2xl font-black tracking-tight">
               Apply for {selectedJob?.title}
