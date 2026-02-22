@@ -288,25 +288,25 @@ export default function LandingPage() {
               </p>
             </div>
             <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-6">
-              <div className="text-center md:text-left">
+              <div className="p-4 border-l-4 border-[#ffde00]">
                 <span className="text-4xl font-black text-gray-200">01</span>
-                <p className="text-lg font-black mt-2">"CLIENT"</p>
-                <p className="text-xs uppercase font-bold text-gray-400 tracking-widest">First Priority</p>
+                <p className="text-lg font-black mt-2">KUNDE</p>
+                <p className="text-xs uppercase font-bold text-gray-400 tracking-widest">Erste Priorität</p>
               </div>
-              <div className="text-center md:text-left">
+              <div className="p-4 border-l-4 border-[#00c6ff]">
                 <span className="text-4xl font-black text-gray-200">02</span>
-                <p className="text-lg font-black mt-2">"EXCELLENCE"</p>
-                <p className="text-xs uppercase font-bold text-gray-400 tracking-widest">Always Deliver</p>
+                <p className="text-lg font-black mt-2">EXZELLENZ</p>
+                <p className="text-xs uppercase font-bold text-gray-400 tracking-widest">Immer liefern</p>
               </div>
-              <div className="text-center md:text-left">
+              <div className="p-4 border-l-4 border-[#ff5e00]">
                 <span className="text-4xl font-black text-gray-200">03</span>
-                <p className="text-lg font-black mt-2">"INNOVATION"</p>
-                <p className="text-xs uppercase font-bold text-gray-400 tracking-widest">Push Limits</p>
+                <p className="text-lg font-black mt-2">INNOVATION</p>
+                <p className="text-xs uppercase font-bold text-gray-400 tracking-widest">Grenzen ausloten</p>
               </div>
-              <div className="text-center md:text-left">
+              <div className="p-4 border-l-4 border-[#1a1a1a]">
                 <span className="text-4xl font-black text-gray-200">04</span>
-                <p className="text-lg font-black mt-2">"TRUST"</p>
-                <p className="text-xs uppercase font-bold text-gray-400 tracking-widest">Be Transparent</p>
+                <p className="text-lg font-black mt-2">VERTRAUEN</p>
+                <p className="text-xs uppercase font-bold text-gray-400 tracking-widest">Seien Sie transparent</p>
               </div>
             </div>
           </div>
@@ -409,6 +409,11 @@ export default function LandingPage() {
           <a href="#" className="hover:text-black transition-colors">Instagram</a>
           <a href="#" className="hover:text-black transition-colors">LinkedIn</a>
           <a href="#" className="hover:text-black transition-colors">Twitter</a>
+        </div>
+        <div className="flex justify-center space-x-6 mb-4 text-xs text-gray-400">
+          <a href="#" className="hover:text-black transition-colors">Privacy Policy</a>
+          <span>|</span>
+          <a href="#" className="hover:text-black transition-colors">Impressum</a>
         </div>
         <p className="text-xs text-gray-300">© 2026 QRADIENT. ALL RIGHTS RESERVED.</p>
       </footer>
