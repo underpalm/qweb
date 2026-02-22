@@ -290,23 +290,23 @@ export default function LandingPage() {
             <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-6">
               <div className="p-4 border-l-4 border-[#ffde00]">
                 <span className="text-4xl font-black text-gray-200">01</span>
-                <p className="text-lg font-black mt-2">KUNDE</p>
-                <p className="text-xs uppercase font-bold text-gray-400 tracking-widest">Erste Priorität</p>
+                <p className="text-lg font-black mt-2">CLIENT</p>
+                <p className="text-xs uppercase font-bold text-gray-400 tracking-widest">First Priority</p>
               </div>
               <div className="p-4 border-l-4 border-[#00c6ff]">
                 <span className="text-4xl font-black text-gray-200">02</span>
-                <p className="text-lg font-black mt-2">EXZELLENZ</p>
-                <p className="text-xs uppercase font-bold text-gray-400 tracking-widest">Immer liefern</p>
+                <p className="text-lg font-black mt-2">EXCELLENCE</p>
+                <p className="text-xs uppercase font-bold text-gray-400 tracking-widest">Always Deliver</p>
               </div>
               <div className="p-4 border-l-4 border-[#ff5e00]">
                 <span className="text-4xl font-black text-gray-200">03</span>
                 <p className="text-lg font-black mt-2">INNOVATION</p>
-                <p className="text-xs uppercase font-bold text-gray-400 tracking-widest">Grenzen ausloten</p>
+                <p className="text-xs uppercase font-bold text-gray-400 tracking-widest">Push Limits</p>
               </div>
               <div className="p-4 border-l-4 border-[#1a1a1a]">
                 <span className="text-4xl font-black text-gray-200">04</span>
-                <p className="text-lg font-black mt-2">VERTRAUEN</p>
-                <p className="text-xs uppercase font-bold text-gray-400 tracking-widest">Seien Sie transparent</p>
+                <p className="text-lg font-black mt-2">TRUST</p>
+                <p className="text-xs uppercase font-bold text-gray-400 tracking-widest">Be Transparent</p>
               </div>
             </div>
           </div>
