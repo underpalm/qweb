@@ -476,7 +476,7 @@ export default function LandingPage() {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 text-center border-t border-gray-100 !pt-8 !pb-6" data-testid="footer">
+      <footer className="py-8 text-center border-t border-gray-100 !pt-6 !pb-4 mt-auto" data-testid="footer">
         <div className="text-2xl font-black tracking-tighter mb-3">QRADIENT.</div>
         <div className="flex justify-center space-x-6 mb-3 uppercase text-[10px] tracking-[0.2em] font-bold text-gray-400">
           <a href="#" className="hover:text-black transition-colors">Instagram</a>
