@@ -315,36 +315,6 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Jobs Section */}
-      <section id="jobs" className="bg-[#f0f0f0] fade-in-up" data-testid="jobs-section">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-black tracking-tighter mb-4" data-testid="jobs-title">JOIN THE TRIBE.</h2>
-            <p className="text-gray-500">We are looking for visionaries, not employees.</p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {jobs.map((job) => (
-              <div 
-                key={job.id}
-                onClick={() => openJobDetail(job)}
-                className="glass-card p-10 hover:shadow-2xl transition-shadow cursor-pointer group job-card"
-                data-testid={`job-card-${job.id}`}
-              >
-                <span className={`inline-block ${getAccentColor(job.accent_color)} text-[10px] font-bold px-3 py-1 rounded-full mb-4`}>
-                  {job.location_type} / {job.location}
-                </span>
-                <h4 className="text-xl md:text-2xl font-bold mb-2">{job.title}</h4>
-                <p className="text-gray-600 mb-6 line-clamp-2">{job.description}</p>
-                <div className={`flex items-center text-xs font-black tracking-widest uppercase transition-colors ${getHoverColor(job.accent_color)}`}>
-                  View Details <ArrowRight className="ml-2" size={16} />
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Contact Section */}
       <section id="contact" className="fade-in-up" data-testid="contact-section">
         <div className="container mx-auto max-w-4xl glass-card p-8 md:p-12 shadow-2xl bg-white border-2 border-black">
@@ -404,6 +374,36 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* Jobs Section */}
+      <section id="jobs" className="bg-[#f0f0f0] fade-in-up" data-testid="jobs-section">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-black tracking-tighter mb-4" data-testid="jobs-title">JOIN THE TRIBE.</h2>
+            <p className="text-gray-500">We are looking for visionaries, not employees.</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {jobs.map((job) => (
+              <div 
+                key={job.id}
+                onClick={() => openJobDetail(job)}
+                className="glass-card p-10 hover:shadow-2xl transition-shadow cursor-pointer group job-card"
+                data-testid={`job-card-${job.id}`}
+              >
+                <span className={`inline-block ${getAccentColor(job.accent_color)} text-[10px] font-bold px-3 py-1 rounded-full mb-4`}>
+                  {job.location_type} / {job.location}
+                </span>
+                <h4 className="text-xl md:text-2xl font-bold mb-2">{job.title}</h4>
+                <p className="text-gray-600 mb-6 line-clamp-2">{job.description}</p>
+                <div className={`flex items-center text-xs font-black tracking-widest uppercase transition-colors ${getHoverColor(job.accent_color)}`}>
+                  View Details <ArrowRight className="ml-2" size={16} />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="py-10 text-center border-t border-gray-100" data-testid="footer">
         <div className="text-2xl font-black tracking-tighter mb-4">QRADIENT.</div>
@@ -413,9 +413,9 @@ export default function LandingPage() {
           <a href="#" className="hover:text-black transition-colors">Twitter</a>
         </div>
         <div className="flex justify-center space-x-6 mb-4 text-xs text-gray-400">
-          <a href="#" className="hover:text-black transition-colors">Privacy Policy</a>
+          <button onClick={() => setShowPrivacyModal(true)} className="hover:text-black transition-colors">Privacy Policy</button>
           <span>|</span>
-          <a href="#" className="hover:text-black transition-colors">Impressum</a>
+          <button onClick={() => setShowImpressumModal(true)} className="hover:text-black transition-colors">Impressum</button>
         </div>
         <p className="text-xs text-gray-300">© 2026 QRADIENT. ALL RIGHTS RESERVED.</p>
       </footer>
