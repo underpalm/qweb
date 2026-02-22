@@ -308,11 +308,11 @@ export default function LandingPage() {
 
       {/* About Section */}
       <section id="about" className="bg-white fade-in-up" data-testid="about-section">
-        <div className="container mx-auto max-w-6xl grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
-          <div>
+        <div className="container mx-auto max-w-6xl grid md:grid-cols-2 gap-8 lg:gap-16 items-center">
+          <div className="w-full">
             <img 
               src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop" 
-              className="rounded-[40px] shadow-xl w-full"
+              className="shadow-xl w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] object-cover"
               alt="Innovation Workspace"
               data-testid="about-image"
             />
@@ -356,8 +356,8 @@ export default function LandingPage() {
 
       {/* Team/Work Images Section - Full Width */}
       <section className="fade-in-up full-width-section" data-testid="images-section">
-        <div className="grid md:grid-cols-2 w-full gap-1 md:gap-2">
-          <div className="relative h-[50vh] md:h-[70vh]">
+        <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-2">
+          <div className="relative h-[40vh] sm:h-[50vh] md:h-[60vh] lg:h-[70vh]">
             <img 
               src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop" 
               alt="Team Collaboration"
