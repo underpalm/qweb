@@ -149,7 +149,7 @@ export default function LandingPage() {
         />
         <div className="hero-content">
           <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter mb-6 leading-none" data-testid="hero-title">
-            AI FOR <br /> <span className="gradient-text">HUMANITY.</span>
+            DATA MEETS <br /> <span className="gradient-text">INTELLIGENCE.</span>
           </h1>
           <p className="text-lg md:text-xl lg:text-2xl max-w-2xl mx-auto mb-12 font-light text-gray-200" data-testid="hero-subtitle">
             Architecting the future of intelligence. Defined by empathy, design, and radical innovation.
@@ -170,6 +170,54 @@ export default function LandingPage() {
           <ArrowDown size={30} />
         </div>
       </header>
+
+      {/* Services Section */}
+      <section id="services" className="bg-[#f0f0f0] fade-in-up" data-testid="services-section">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-16">
+            <h2 className="text-xs font-bold tracking-[0.3em] uppercase text-gray-400 mb-4">What We Do</h2>
+            <h3 className="text-4xl md:text-5xl font-black tracking-tighter">SERVICES</h3>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Service 01 */}
+            <div className="glass-card p-10 group hover:shadow-2xl transition-shadow">
+              <span className="text-6xl font-black text-gray-200 group-hover:text-[#ffde00] transition-colors">01</span>
+              <h4 className="text-xl md:text-2xl font-bold mt-4 mb-3">AI Strategy & Consulting</h4>
+              <p className="text-gray-600 leading-relaxed">
+                We help you identify AI opportunities and develop a roadmap for implementation that aligns with your business goals.
+              </p>
+            </div>
+
+            {/* Service 02 */}
+            <div className="glass-card p-10 group hover:shadow-2xl transition-shadow">
+              <span className="text-6xl font-black text-gray-200 group-hover:text-[#00c6ff] transition-colors">02</span>
+              <h4 className="text-xl md:text-2xl font-bold mt-4 mb-3">Data Analytics & Insights</h4>
+              <p className="text-gray-600 leading-relaxed">
+                Transform your raw data into actionable insights with our advanced analytics solutions and machine learning models.
+              </p>
+            </div>
+
+            {/* Service 03 */}
+            <div className="glass-card p-10 group hover:shadow-2xl transition-shadow">
+              <span className="text-6xl font-black text-gray-200 group-hover:text-[#ff5e00] transition-colors">03</span>
+              <h4 className="text-xl md:text-2xl font-bold mt-4 mb-3">Custom AI Solutions</h4>
+              <p className="text-gray-600 leading-relaxed">
+                From chatbots to predictive models, we build tailored AI solutions that solve your unique business challenges.
+              </p>
+            </div>
+
+            {/* Service 04 */}
+            <div className="glass-card p-10 group hover:shadow-2xl transition-shadow">
+              <span className="text-6xl font-black text-gray-200 group-hover:text-[#ffde00] transition-colors">04</span>
+              <h4 className="text-xl md:text-2xl font-bold mt-4 mb-3">AI Integration & Automation</h4>
+              <p className="text-gray-600 leading-relaxed">
+                Seamlessly integrate AI into your existing workflows and automate repetitive tasks to boost productivity.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* About Section */}
       <section id="about" className="bg-white fade-in-up" data-testid="about-section">
@@ -193,7 +241,7 @@ export default function LandingPage() {
                 <strong>Our Vision:</strong> A world where technology expands the human spirit instead of replacing it. We seek the "gradient" between cold logic and warm creativity.
               </p>
             </div>
-            <div className="mt-10 flex space-x-4">
+            <div className="mt-10 flex flex-wrap gap-4">
               <div className="p-4 border-l-4 border-[#ffde00]">
                 <span className="block font-black text-2xl">100%</span>
                 <span className="text-xs uppercase font-bold text-gray-400 tracking-widest">Innovation focus</span>
@@ -201,6 +249,10 @@ export default function LandingPage() {
               <div className="p-4 border-l-4 border-[#00c6ff]">
                 <span className="block font-black text-2xl">Global</span>
                 <span className="text-xs uppercase font-bold text-gray-400 tracking-widest">Network</span>
+              </div>
+              <div className="p-4 border-l-4 border-[#ff5e00]">
+                <span className="block font-black text-2xl">Trust</span>
+                <span className="text-xs uppercase font-bold text-gray-400 tracking-widest">Be Transparent</span>
               </div>
             </div>
           </div>
@@ -310,7 +362,7 @@ export default function LandingPage() {
 
       {/* Job Detail Modal */}
       <Dialog open={showJobModal} onOpenChange={setShowJobModal}>
-        <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto" data-testid="job-detail-modal">
+        <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto bg-white border-2 border-black shadow-2xl" data-testid="job-detail-modal">
           <DialogHeader>
             <DialogTitle className="text-2xl font-black tracking-tight">{selectedJob?.title}</DialogTitle>
           </DialogHeader>
