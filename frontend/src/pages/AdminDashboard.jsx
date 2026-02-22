@@ -21,7 +21,8 @@ import {
   ArrowLeft,
   Plus,
   Power,
-  Edit
+  Edit,
+  FileText
 } from "lucide-react";
 
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
