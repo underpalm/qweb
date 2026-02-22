@@ -521,6 +521,15 @@ export default function AdminDashboard() {
                 <p className="text-xs text-gray-400 uppercase tracking-widest mb-1">Experience</p>
                 <p>{selectedItem.experience_years} years</p>
               </div>
+              {selectedItem.cv_filename && (
+                <div>
+                  <p className="text-xs text-gray-400 uppercase tracking-widest mb-1">CV / Resume</p>
+                  <div className="flex items-center gap-2 p-3 bg-white/5 rounded-lg">
+                    <FileText size={20} className="text-[#ffde00]" />
+                    <span className="text-sm">{selectedItem.cv_filename}</span>
+                  </div>
+                </div>
+              )}
               <div>
                 <p className="text-xs text-gray-400 uppercase tracking-widest mb-1">Cover Letter</p>
                 <p className="text-gray-300 whitespace-pre-wrap">{selectedItem.cover_letter}</p>
