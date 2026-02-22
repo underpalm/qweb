@@ -491,7 +491,10 @@ export default function LandingPage() {
           <span>|</span>
           <button onClick={() => setShowImpressumModal(true)} className="hover:text-black transition-colors">Impressum</button>
         </div>
-        <p className="text-sm text-gray-400">© 2026 QRADIENT. ALL RIGHTS RESERVED.</p>
+        <p className="text-sm text-gray-400 mb-8">© 2026 QRADIENT. ALL RIGHTS RESERVED.</p>
+        <div className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter text-gray-200 leading-none">
+          DATA MEETS<br />INTELLIGENCE.
+        </div>
       </footer>
 
       {/* Job Detail Modal */}
