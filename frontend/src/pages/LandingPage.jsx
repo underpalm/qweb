@@ -349,8 +349,8 @@ export default function LandingPage() {
       </section>
 
       {/* Team/Work Images Section - Full Width */}
-      <section className="fade-in-up" data-testid="images-section">
-        <div className="grid md:grid-cols-2">
+      <section className="fade-in-up full-width-section" data-testid="images-section">
+        <div className="grid md:grid-cols-2 w-full">
           <div className="relative h-[50vh] md:h-[70vh]">
             <img 
               src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop" 
