@@ -143,7 +143,9 @@ export default function LandingPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#fafafa] text-[#1a1a1a] flex flex-col">
+    <div className="min-h-screen bg-[#1a1a1a] text-[#1a1a1a] flex flex-col">
+      {/* Main Content */}
+      <main className="flex-grow bg-[#fafafa]">
       {/* Navigation */}
       <nav 
         data-testid="main-navigation"
