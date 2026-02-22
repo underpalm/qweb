@@ -446,7 +446,7 @@ export default function LandingPage() {
       </section>
 
       {/* Jobs Section */}
-      <section id="jobs" className="bg-[#f0f0f0] fade-in-up" data-testid="jobs-section">
+      <section id="jobs" className="bg-[#f0f0f0] fade-in-up !pb-16" data-testid="jobs-section">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-black tracking-tighter mb-4" data-testid="jobs-title">JOIN THE TRIBE.</h2>
