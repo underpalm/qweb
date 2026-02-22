@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { toast } from "sonner";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "../components/ui/dialog";
-import { ArrowRight, ArrowDown, Play, X } from "lucide-react";
+import { ArrowRight, ArrowDown, Play, Upload } from "lucide-react";
 
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
@@ -494,6 +494,44 @@ export default function LandingPage() {
                 className="form-input resize-none"
                 data-testid="application-cover-letter-input"
               />
+            </div>
+            <div>
+              <label className="text-xs uppercase tracking-widest font-bold text-gray-400 mb-2 block">
+                Upload CV / Resume *
+              </label>
+              <label 
+                className="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-gray-300 rounded-xl cursor-pointer hover:border-[#ffde00] hover:bg-gray-50 transition-colors"
+                data-testid="cv-upload-label"
+              >
+                <div className="flex flex-col items-center justify-center pt-5 pb-6">
+                  <Upload className="w-8 h-8 mb-2 text-gray-400" />
+                  {cvFileName ? (
+                    <p className="text-sm font-semibold text-[#1a1a1a]">{cvFileName}</p>
+                  ) : (
+                    <>
+                      <p className="text-xs text-gray-500 uppercase tracking-widest font-bold">Click to upload</p>
+                      <p className="text-xs text-gray-400 mt-1">PDF, DOC, DOCX (max 5MB)</p>
+                    </>
+                  )}
+                </div>
+                <input 
+                  type="file" 
+                  className="hidden" 
+                  accept=".pdf,.doc,.docx"
+                  onChange={(e) => {
+                    const file = e.target.files[0];
+                    if (file) {
+                      if (file.size > 5 * 1024 * 1024) {
+                        toast.error("File size must be less than 5MB");
+                        return;
+                      }
+                      setApplicationForm({...applicationForm, cv_file: file});
+                      setCvFileName(file.name);
+                    }
+                  }}
+                  data-testid="cv-upload-input"
+                />
+              </label>
             </div>
             <button 
               type="submit"
