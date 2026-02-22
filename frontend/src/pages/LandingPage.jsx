@@ -188,6 +188,8 @@ export default function LandingPage() {
         </div>
       )}
 
+      {/* Main Content */}
+      <main className="flex-grow">
       {/* Hero Section */}
       <header id="home" className="hero-full-screen" data-testid="hero-section">
         <img 
