@@ -476,14 +476,14 @@ export default function LandingPage() {
       </section>
 
       {/* Footer */}
-      <footer className="py-10 text-center border-t border-gray-100" data-testid="footer">
-        <div className="text-2xl font-black tracking-tighter mb-4">QRADIENT.</div>
-        <div className="flex justify-center space-x-6 mb-4 uppercase text-[10px] tracking-[0.2em] font-bold text-gray-400">
+      <footer className="py-6 text-center border-t border-gray-100" data-testid="footer">
+        <div className="text-xl font-black tracking-tighter mb-2">QRADIENT.</div>
+        <div className="flex justify-center space-x-6 mb-2 uppercase text-[10px] tracking-[0.2em] font-bold text-gray-400">
           <a href="#" className="hover:text-black transition-colors">Instagram</a>
           <a href="https://www.linkedin.com/company/qradient" target="_blank" rel="noopener noreferrer" className="hover:text-black transition-colors">LinkedIn</a>
           <a href="#" className="hover:text-black transition-colors">Twitter</a>
         </div>
-        <div className="flex justify-center space-x-6 mb-4 text-xs text-gray-400">
+        <div className="flex justify-center space-x-6 mb-2 text-xs text-gray-400">
           <button onClick={() => setShowPrivacyModal(true)} className="hover:text-black transition-colors">Privacy Policy</button>
           <span>|</span>
           <button onClick={() => setShowImpressumModal(true)} className="hover:text-black transition-colors">Impressum</button>
