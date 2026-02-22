@@ -145,20 +145,46 @@ export default function LandingPage() {
       {/* Navigation */}
       <nav 
         data-testid="main-navigation"
-        className="fixed top-4 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-7xl z-50 glass-card px-8 py-6 flex justify-between items-center"
+        className="fixed top-4 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-7xl z-50 glass-card px-4 md:px-8 py-4 md:py-6 flex justify-between items-center"
       >
-        <a href="/" className="text-2xl font-black tracking-tighter hover:text-[#ffde00] transition-colors" data-testid="logo">QRADIENT.</a>
-        <div className="hidden md:flex space-x-8 uppercase text-xs tracking-widest font-bold">
+        <a href="/" className="text-xl md:text-2xl font-black tracking-tighter hover:text-[#ffde00] transition-colors" data-testid="logo">QRADIENT.</a>
+        
+        {/* Desktop Navigation */}
+        <div className="hidden lg:flex space-x-8 uppercase text-xs tracking-widest font-bold">
           <a href="#home" className="nav-link" data-testid="nav-home">Home</a>
           <a href="#services" className="nav-link" data-testid="nav-services">Services</a>
           <a href="#about" className="nav-link" data-testid="nav-about">About</a>
           <a href="#jobs" className="nav-link" data-testid="nav-jobs">Join Us</a>
           <a href="#contact" className="nav-link" data-testid="nav-contact">Contact</a>
         </div>
-        <div>
+        
+        <div className="hidden md:block">
           <a href="#contact" className="pharrell-btn text-xs" data-testid="nav-lets-talk">Let's Talk</a>
         </div>
+
+        {/* Mobile Menu Button */}
+        <button 
+          className="lg:hidden p-2 hover:bg-black/10 rounded-lg transition-colors"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          data-testid="mobile-menu-btn"
+        >
+          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
       </nav>
+
+      {/* Mobile Menu */}
+      {mobileMenuOpen && (
+        <div className="fixed top-24 left-4 right-4 z-40 glass-card p-6 lg:hidden" data-testid="mobile-menu">
+          <div className="flex flex-col space-y-4 uppercase text-sm tracking-widest font-bold">
+            <a href="#home" onClick={() => setMobileMenuOpen(false)} className="py-2 border-b border-gray-200 hover:text-[#ffde00] transition-colors">Home</a>
+            <a href="#services" onClick={() => setMobileMenuOpen(false)} className="py-2 border-b border-gray-200 hover:text-[#ffde00] transition-colors">Services</a>
+            <a href="#about" onClick={() => setMobileMenuOpen(false)} className="py-2 border-b border-gray-200 hover:text-[#ffde00] transition-colors">About</a>
+            <a href="#jobs" onClick={() => setMobileMenuOpen(false)} className="py-2 border-b border-gray-200 hover:text-[#ffde00] transition-colors">Join Us</a>
+            <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="py-2 border-b border-gray-200 hover:text-[#ffde00] transition-colors">Contact</a>
+            <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="pharrell-btn text-xs text-center mt-4">Let's Talk</a>
+          </div>
+        </div>
+      )}
 
       {/* Hero Section */}
       <header id="home" className="hero-full-screen" data-testid="hero-section">
