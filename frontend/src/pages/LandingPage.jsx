@@ -404,7 +404,7 @@ export default function LandingPage() {
               <img 
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop" 
                 alt="Team Collaboration"
-                className="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-105"
+                className="w-full h-[400px] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
                 <div>
@@ -417,7 +417,7 @@ export default function LandingPage() {
               <img 
                 src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=2070&auto=format&fit=crop" 
                 alt="Modern Workspace"
-                className="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-105"
+                className="w-full h-[400px] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
                 <div>
