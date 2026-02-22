@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { toast } from "sonner";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "../components/ui/dialog";
-import { ArrowRight, ArrowDown, Play, Upload } from "lucide-react";
+import { ArrowRight, ArrowDown, Play, Upload, Menu, X } from "lucide-react";
 
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
@@ -17,6 +17,7 @@ export default function LandingPage() {
   });
   const [cvFileName, setCvFileName] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     fetchJobs();
