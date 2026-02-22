@@ -479,19 +479,19 @@ export default function LandingPage() {
       </main>
 
       {/* Footer */}
-      <footer className="text-center border-t border-gray-100 py-4 bg-[#fafafa]" data-testid="footer">
-        <div className="text-2xl font-black tracking-tighter mb-3">QRADIENT.</div>
-        <div className="flex justify-center space-x-6 mb-3 uppercase text-[10px] tracking-[0.2em] font-bold text-gray-400">
+      <footer className="text-center border-t border-gray-100 py-3 bg-[#fafafa]" data-testid="footer">
+        <div className="text-lg font-black tracking-tighter mb-1">QRADIENT.</div>
+        <div className="flex justify-center space-x-4 mb-1 uppercase text-[9px] tracking-[0.15em] font-bold text-gray-400">
           <a href="#" className="hover:text-black transition-colors">Instagram</a>
           <a href="https://www.linkedin.com/company/qradient" target="_blank" rel="noopener noreferrer" className="hover:text-black transition-colors">LinkedIn</a>
           <a href="#" className="hover:text-black transition-colors">Twitter</a>
         </div>
-        <div className="flex justify-center space-x-6 mb-3 text-xs text-gray-400">
+        <div className="flex justify-center space-x-4 mb-1 text-[10px] text-gray-400">
           <button onClick={() => setShowPrivacyModal(true)} className="hover:text-black transition-colors">Privacy Policy</button>
           <span>|</span>
           <button onClick={() => setShowImpressumModal(true)} className="hover:text-black transition-colors">Impressum</button>
         </div>
-        <p className="text-xs text-gray-300">© 2026 QRADIENT. ALL RIGHTS RESERVED.</p>
+        <p className="text-[10px] text-gray-300">© 2026 QRADIENT. ALL RIGHTS RESERVED.</p>
       </footer>
 
       {/* Job Detail Modal */}
