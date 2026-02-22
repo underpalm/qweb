@@ -15,6 +15,11 @@ section.full-width-section {
     padding-right: 0;
 }
 
+/* Footer - compact padding */
+footer {
+    padding: 2rem 1rem !important;
+}
+
 /* Border accent colors */
 .border-yellow-accent {
     border-color: var(--accent-yellow);
