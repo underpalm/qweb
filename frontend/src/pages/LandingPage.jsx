@@ -264,6 +264,39 @@ export default function LandingPage() {
               </p>
             </div>
           </div>
+
+          {/* Tools & Technologies Marquee */}
+          <div className="mt-20">
+            <h3 className="text-center text-xs font-bold tracking-[0.3em] uppercase text-gray-400 mb-8">
+              Tools, Partnerschaften & Technologien
+            </h3>
+            <div className="relative overflow-hidden">
+              <div className="flex animate-marquee whitespace-nowrap">
+                {/* First set of logos */}
+                <div className="flex items-center gap-16 mx-8">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/OpenAI_Logo.svg" alt="OpenAI" className="h-8 opacity-60 hover:opacity-100 transition-opacity" />
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS" className="h-8 opacity-60 hover:opacity-100 transition-opacity" />
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Nvidia_logo.svg" alt="NVIDIA" className="h-8 opacity-60 hover:opacity-100 transition-opacity" />
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Google_Cloud_logo.svg" alt="Google Cloud" className="h-6 opacity-60 hover:opacity-100 transition-opacity" />
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Microsoft_Azure_Logo.svg" alt="Azure" className="h-8 opacity-60 hover:opacity-100 transition-opacity" />
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Terraform_Logo.svg" alt="Terraform" className="h-8 opacity-60 hover:opacity-100 transition-opacity" />
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Notion-logo.svg" alt="Notion" className="h-8 opacity-60 hover:opacity-100 transition-opacity" />
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/LangChain_logo.png" alt="LangChain" className="h-8 opacity-60 hover:opacity-100 transition-opacity" />
+                </div>
+                {/* Duplicate set for seamless loop */}
+                <div className="flex items-center gap-16 mx-8">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/OpenAI_Logo.svg" alt="OpenAI" className="h-8 opacity-60 hover:opacity-100 transition-opacity" />
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS" className="h-8 opacity-60 hover:opacity-100 transition-opacity" />
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Nvidia_logo.svg" alt="NVIDIA" className="h-8 opacity-60 hover:opacity-100 transition-opacity" />
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Google_Cloud_logo.svg" alt="Google Cloud" className="h-6 opacity-60 hover:opacity-100 transition-opacity" />
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Microsoft_Azure_Logo.svg" alt="Azure" className="h-8 opacity-60 hover:opacity-100 transition-opacity" />
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Terraform_Logo.svg" alt="Terraform" className="h-8 opacity-60 hover:opacity-100 transition-opacity" />
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Notion-logo.svg" alt="Notion" className="h-8 opacity-60 hover:opacity-100 transition-opacity" />
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/LangChain_logo.png" alt="LangChain" className="h-8 opacity-60 hover:opacity-100 transition-opacity" />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
