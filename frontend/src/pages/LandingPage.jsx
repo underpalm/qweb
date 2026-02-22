@@ -363,7 +363,7 @@ export default function LandingPage() {
               alt="Team Collaboration"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-8 md:p-12">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6 sm:p-8 md:p-12">
               <div>
                 <p className="text-white text-xs uppercase tracking-widest font-bold mb-2">Our Team</p>
                 <p className="text-white/80 text-sm md:text-base">Collaborative innovation at its finest</p>
