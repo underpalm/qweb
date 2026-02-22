@@ -92,6 +92,8 @@ class Application(BaseModel):
     portfolio: Optional[str] = None
     cover_letter: str
     experience_years: int
+    cv_filename: Optional[str] = None
+    cv_path: Optional[str] = None
     status: str = "new"  # new, reviewing, interviewed, accepted, rejected
     created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 
