@@ -9,6 +9,12 @@ section {
     padding: 100px 20px;
 }
 
+/* Full-width section override - no horizontal padding */
+section.full-width-section {
+    padding-left: 0;
+    padding-right: 0;
+}
+
 /* Border accent colors */
 .border-yellow-accent {
     border-color: var(--accent-yellow);
