@@ -570,7 +570,7 @@ export default function LandingPage() {
               <div className="mb-8">
                 <h4 className="text-lg font-bold mb-4 flex items-center gap-2">
                   <span className="w-2 h-2 bg-[#00FF88] rounded-full"></span>
-                  Anforderungen
+                  Requirements
                 </h4>
                 <ul className="space-y-2">
                   {selectedJob.requirements.map((req, idx) => (
@@ -605,7 +605,7 @@ export default function LandingPage() {
               className="btn-primary w-full md:w-auto"
               data-testid="apply-btn"
             >
-              Jetzt Bewerben
+              Apply Now
             </button>
           </div>
         </DialogContent>
