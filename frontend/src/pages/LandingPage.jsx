@@ -94,24 +94,28 @@ export default function LandingPage() {
     {
       title: 'AI Integration & Automation',
       description: 'Seamlessly integrate AI into your existing workflows and automate repetitive tasks to boost productivity across every department.',
+      fullDescription: 'Our AI Integration & Automation service transforms your business operations by embedding intelligent automation into your existing infrastructure. We analyze your current workflows, identify automation opportunities, and implement AI-powered solutions that work seamlessly with your team. From intelligent document processing to automated decision-making systems, we help you achieve unprecedented efficiency gains while reducing operational costs.',
       tag: 'PROCESS_OPTIMIZATION_LOADED',
       image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=2070&auto=format&fit=crop'
     },
     {
       title: 'Data Analytics & Insights',
       description: 'Transform your raw data into actionable insights with our advanced analytics solutions and custom-trained machine learning models.',
+      fullDescription: 'Unlock the hidden potential in your data with our comprehensive analytics solutions. We deploy advanced machine learning models and sophisticated data pipelines that transform raw information into strategic business intelligence. Our team builds custom dashboards, predictive models, and real-time analytics systems that give you a competitive edge in understanding market trends, customer behavior, and operational performance.',
       tag: 'DATA_MINING_ACTIVE',
       image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop'
     },
     {
       title: 'Custom AI Solutions',
       description: 'From enterprise chatbots to predictive forecasting models, we build tailored AI solutions that solve your unique business challenges.',
+      fullDescription: 'Every business is unique, and so are its challenges. Our Custom AI Solutions service delivers bespoke artificial intelligence systems designed specifically for your needs. Whether you need an intelligent customer service chatbot, a sophisticated recommendation engine, or a complex predictive maintenance system, we architect and build solutions that align perfectly with your business objectives and technical requirements.',
       tag: 'CUSTOM_BUILD_READY',
       image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2070&auto=format&fit=crop'
     },
     {
       title: 'Executive Bootcamps & Training',
       description: 'Empower your workforce with the skills to leverage AI. We provide high-level strategic training for leaders and technical workshops for teams.',
+      fullDescription: 'Bridge the AI knowledge gap in your organization with our comprehensive training programs. Our Executive Bootcamps provide C-suite leaders with strategic AI insights, while our technical workshops equip your teams with hands-on skills in machine learning, data science, and AI implementation. We customize every training program to your industry and organizational needs, ensuring maximum relevance and impact.',
       tag: 'KNOWLEDGE_TRANSFER_SYNC',
       image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop'
     }
