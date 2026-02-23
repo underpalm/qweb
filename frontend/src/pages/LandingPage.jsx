@@ -13,6 +13,8 @@ export default function LandingPage() {
   const [showApplyModal, setShowApplyModal] = useState(false);
   const [showPrivacyModal, setShowPrivacyModal] = useState(false);
   const [showImpressumModal, setShowImpressumModal] = useState(false);
+  const [selectedService, setSelectedService] = useState(null);
+  const [showServiceModal, setShowServiceModal] = useState(false);
   const [contactForm, setContactForm] = useState({ name: '', email: '', subject: '', message: '' });
   const [applyForm, setApplyForm] = useState({ name: '', email: '', message: '', cv: null });
 
