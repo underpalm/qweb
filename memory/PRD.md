@@ -50,15 +50,25 @@ Build a website for an AI Consulting company called "Qradient" with:
 - ✅ Privacy Policy modal
 - ✅ Impressum modal (German legal requirements)
 
+### Session 3 (23 Feb 2026)
+- ✅ Complete design overhaul with dark theme (#0f172a, neon-green #00FF88)
+- ✅ Service modal with detailed descriptions and images
+- ✅ Values section (Client First, Excellence, Innovation, Trust)
+- ✅ Layout fixes: Services section now uses full width (px-4)
+- ✅ Reduced empty space below footer (pt-32 pb-16)
+- ✅ Fixed Contact form backend connectivity with subject field
+- ✅ Fixed Apply form backend connectivity (job_id parameter)
+- ✅ Toast notifications for successful form submissions (German messages)
+
 ## Tech Stack
 - Frontend: React 19, Tailwind CSS, Shadcn/UI, Lucide React
 - Backend: FastAPI, Motor (async MongoDB)
 - Database: MongoDB
 
 ## API Endpoints
-- `POST /api/contacts` - Submit contact form
+- `POST /api/contacts` - Submit contact form (name, email, subject, message)
 - `GET /api/jobs` - Get job listings
-- `POST /api/applications/upload` - Submit job application with CV
+- `POST /api/applications/upload` - Submit job application with CV (FormData)
 - `GET /api/admin/stats` - Dashboard statistics
 - `GET /api/admin/cv/{filename}` - Download uploaded CV
 - `POST /api/seed` - Initial data seeding
@@ -78,3 +88,4 @@ Build a website for an AI Consulting company called "Qradient" with:
 1. Add email notifications (SendGrid/Resend integration)
 2. Add search functionality in admin
 3. Multi-language support
+
