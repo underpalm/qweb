@@ -35,6 +35,7 @@ api_router = APIRouter(prefix="/api")
 class ContactMessageCreate(BaseModel):
     name: str
     email: EmailStr
+    subject: Optional[str] = None
     message: str
 
 class ContactMessage(BaseModel):
@@ -42,6 +43,7 @@ class ContactMessage(BaseModel):
     id: str = Field(default_factory=lambda: str(uuid.uuid4()))
     name: str
     email: str
+    subject: Optional[str] = None
     message: str
     status: str = "unread"
     created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
@@ -203,12 +205,13 @@ async def create_application_with_cv(
     job_id: str = Form(...),
     name: str = Form(...),
     email: str = Form(...),
+    message: Optional[str] = Form(None),
     phone: Optional[str] = Form(None),
     linkedin: Optional[str] = Form(None),
     portfolio: Optional[str] = Form(None),
-    cover_letter: str = Form(...),
-    experience_years: int = Form(...),
-    cv_file: Optional[UploadFile] = File(None)
+    cover_letter: Optional[str] = Form(None),
+    experience_years: Optional[int] = Form(0),
+    cv: Optional[UploadFile] = File(None)
 ):
     # Get job title
     job = await db.jobs.find_one({"id": job_id}, {"_id": 0})
@@ -219,22 +222,25 @@ async def create_application_with_cv(
     cv_path = None
     
     # Handle CV file upload
-    if cv_file:
+    if cv:
         # Validate file type
         allowed_types = [".pdf", ".doc", ".docx"]
-        file_ext = os.path.splitext(cv_file.filename)[1].lower()
+        file_ext = os.path.splitext(cv.filename)[1].lower()
         if file_ext not in allowed_types:
             raise HTTPException(status_code=400, detail="Invalid file type. Only PDF, DOC, DOCX allowed.")
         
         # Generate unique filename
         unique_id = str(uuid.uuid4())[:8]
-        cv_filename = f"{unique_id}_{cv_file.filename}"
+        cv_filename = f"{unique_id}_{cv.filename}"
         cv_path = str(UPLOADS_DIR / cv_filename)
         
         # Save file
-        content = await cv_file.read()
+        content = await cv.read()
         with open(cv_path, "wb") as f:
             f.write(content)
+    
+    # Use message as cover_letter if cover_letter not provided
+    final_cover_letter = cover_letter or message or ""
     
     application = Application(
         job_id=job_id,
@@ -244,14 +250,14 @@ async def create_application_with_cv(
         phone=phone,
         linkedin=linkedin,
         portfolio=portfolio,
-        cover_letter=cover_letter,
-        experience_years=experience_years,
+        cover_letter=final_cover_letter,
+        experience_years=experience_years or 0,
         cv_filename=cv_filename,
         cv_path=cv_path
     )
     doc = serialize_datetime(application.model_dump())
     await db.applications.insert_one(doc)
-    return application
+    return {"success": True, "message": "Bewerbung erfolgreich eingegangen"}
 
 @api_router.post("/applications", response_model=Application)
 async def create_application(input: ApplicationCreate):
