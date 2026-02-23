@@ -89,15 +89,15 @@ export default function LandingPage() {
         body: formData,
       });
       if (res.ok) {
-        toast.success('Bewerbung erfolgreich eingegangen! Wir melden uns bald bei Ihnen.');
+        toast.success('Application submitted successfully! We will get back to you soon.');
         setShowApplyModal(false);
         setApplyForm({ name: '', email: '', message: '', cv: null });
       } else {
         const data = await res.json();
-        toast.error(data.detail || 'Fehler beim Senden der Bewerbung.');
+        toast.error(data.detail || 'Error submitting application.');
       }
     } catch (error) {
-      toast.error('Fehler beim Senden der Bewerbung.');
+      toast.error('Error submitting application.');
     }
   };
 
