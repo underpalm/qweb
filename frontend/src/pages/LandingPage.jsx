@@ -266,6 +266,30 @@ export default function LandingPage() {
             </div>
           </div>
 
+          {/* Values Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+            <div className="border-l-4 border-[#00FF88] pl-4">
+              <span className="text-4xl md:text-5xl font-black text-slate-200">01</span>
+              <h4 className="text-lg font-bold mt-2">CLIENT</h4>
+              <p className="text-sm text-slate-500 uppercase tracking-wider">First Priority</p>
+            </div>
+            <div className="border-l-4 border-[#00FF88] pl-4">
+              <span className="text-4xl md:text-5xl font-black text-slate-200">02</span>
+              <h4 className="text-lg font-bold mt-2">EXCELLENCE</h4>
+              <p className="text-sm text-slate-500 uppercase tracking-wider">Always Deliver</p>
+            </div>
+            <div className="border-l-4 border-[#00FF88] pl-4">
+              <span className="text-4xl md:text-5xl font-black text-slate-200">03</span>
+              <h4 className="text-lg font-bold mt-2">INNOVATION</h4>
+              <p className="text-sm text-slate-500 uppercase tracking-wider">Push Limits</p>
+            </div>
+            <div className="border-l-4 border-[#00FF88] pl-4">
+              <span className="text-4xl md:text-5xl font-black text-slate-200">04</span>
+              <h4 className="text-lg font-bold mt-2">TRUST</h4>
+              <p className="text-sm text-slate-500 uppercase tracking-wider">Be Transparent</p>
+            </div>
+          </div>
+
           <blockquote className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tighter italic border-l-8 border-[#00FF88] pl-8 py-4">
             "Precision is the purest form of clarity."
           </blockquote>
