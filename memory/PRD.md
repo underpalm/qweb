@@ -88,7 +88,6 @@ Build a website for an AI Consulting company called "Qradient" with:
 ### P2 (Future)
 - Analytics dashboard
 - Public job board page
-- Newsletter subscription
 
 ## Next Tasks
 1. Add email notifications (SendGrid/Resend integration)
