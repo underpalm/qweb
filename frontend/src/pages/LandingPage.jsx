@@ -101,6 +101,31 @@ export default function LandingPage() {
     }
   };
 
+  const handleNewsletterSubmit = async (e) => {
+    e.preventDefault();
+    if (!newsletterEmail) return;
+    
+    setNewsletterLoading(true);
+    try {
+      const res = await fetch(`${API_URL}/api/newsletter`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: newsletterEmail }),
+      });
+      if (res.ok) {
+        toast.success('Newsletter-Anmeldung erfolgreich! Vielen Dank.');
+        setNewsletterEmail('');
+      } else {
+        const data = await res.json();
+        toast.error(data.detail || 'Fehler bei der Newsletter-Anmeldung.');
+      }
+    } catch (error) {
+      toast.error('Fehler bei der Newsletter-Anmeldung.');
+    } finally {
+      setNewsletterLoading(false);
+    }
+  };
+
   const services = [
     {
       title: 'AI Integration & Automation',
