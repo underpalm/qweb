@@ -70,8 +70,11 @@ Build a website for an AI Consulting company called "Qradient" with:
 
 ## API Endpoints
 - `POST /api/contacts` - Submit contact form (name, email, subject, message)
-- `GET /api/jobs` - Get job listings
+- `GET /api/jobs` - Get job listings (with requirements & benefits)
 - `POST /api/applications/upload` - Submit job application with CV (FormData)
+- `POST /api/newsletter` - Subscribe to newsletter
+- `GET /api/newsletter` - Get newsletter subscribers
+- `DELETE /api/newsletter/{email}` - Unsubscribe from newsletter
 - `GET /api/admin/stats` - Dashboard statistics
 - `GET /api/admin/cv/{filename}` - Download uploaded CV
 - `POST /api/seed` - Initial data seeding
