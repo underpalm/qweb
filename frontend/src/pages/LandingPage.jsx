@@ -182,6 +182,44 @@ export default function LandingPage() {
         </div>
       </main>
 
+      {/* Tools, Partnerships & Technologies Marquee */}
+      <section className="py-16 border-t border-b border-slate-800/50 overflow-hidden" data-testid="partners-section">
+        <h3 className="text-center mono text-xs font-bold tracking-[0.3em] uppercase text-slate-500 mb-8">
+          Tools, Partnerships & Technologies
+        </h3>
+        <div className="relative">
+          {/* Gradient Fade Left */}
+          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#0f172a] to-transparent z-10 pointer-events-none"></div>
+          {/* Gradient Fade Right */}
+          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#0f172a] to-transparent z-10 pointer-events-none"></div>
+          
+          <div className="flex animate-marquee-rtl">
+            {/* First set */}
+            <div className="flex items-center gap-16 md:gap-24 px-8 shrink-0">
+              <span className="text-2xl md:text-3xl font-black text-slate-600 hover:text-[#00FF88] transition-colors whitespace-nowrap">OpenAI</span>
+              <span className="text-2xl md:text-3xl font-black text-slate-600 hover:text-[#00FF88] transition-colors whitespace-nowrap">NVIDIA</span>
+              <span className="text-2xl md:text-3xl font-black text-slate-600 hover:text-[#00FF88] transition-colors whitespace-nowrap">Hugging Face</span>
+              <span className="text-2xl md:text-3xl font-black text-slate-600 hover:text-[#00FF88] transition-colors whitespace-nowrap">Google Cloud</span>
+              <span className="text-2xl md:text-3xl font-black text-slate-600 hover:text-[#00FF88] transition-colors whitespace-nowrap">AWS</span>
+              <span className="text-2xl md:text-3xl font-black text-slate-600 hover:text-[#00FF88] transition-colors whitespace-nowrap">Azure</span>
+              <span className="text-2xl md:text-3xl font-black text-slate-600 hover:text-[#00FF88] transition-colors whitespace-nowrap">Anthropic</span>
+              <span className="text-2xl md:text-3xl font-black text-slate-600 hover:text-[#00FF88] transition-colors whitespace-nowrap">Databricks</span>
+            </div>
+            {/* Duplicate set for seamless loop */}
+            <div className="flex items-center gap-16 md:gap-24 px-8 shrink-0">
+              <span className="text-2xl md:text-3xl font-black text-slate-600 hover:text-[#00FF88] transition-colors whitespace-nowrap">OpenAI</span>
+              <span className="text-2xl md:text-3xl font-black text-slate-600 hover:text-[#00FF88] transition-colors whitespace-nowrap">NVIDIA</span>
+              <span className="text-2xl md:text-3xl font-black text-slate-600 hover:text-[#00FF88] transition-colors whitespace-nowrap">Hugging Face</span>
+              <span className="text-2xl md:text-3xl font-black text-slate-600 hover:text-[#00FF88] transition-colors whitespace-nowrap">Google Cloud</span>
+              <span className="text-2xl md:text-3xl font-black text-slate-600 hover:text-[#00FF88] transition-colors whitespace-nowrap">AWS</span>
+              <span className="text-2xl md:text-3xl font-black text-slate-600 hover:text-[#00FF88] transition-colors whitespace-nowrap">Azure</span>
+              <span className="text-2xl md:text-3xl font-black text-slate-600 hover:text-[#00FF88] transition-colors whitespace-nowrap">Anthropic</span>
+              <span className="text-2xl md:text-3xl font-black text-slate-600 hover:text-[#00FF88] transition-colors whitespace-nowrap">Databricks</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Services Section */}
       <section id="services" className="py-32 px-6 md:px-24 fade-in-up" data-testid="services-section">
         <div className="section-tag">Capabilities</div>
