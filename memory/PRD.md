@@ -59,6 +59,9 @@ Build a website for an AI Consulting company called "Qradient" with:
 - ✅ Fixed Contact form backend connectivity with subject field
 - ✅ Fixed Apply form backend connectivity (job_id parameter)
 - ✅ Toast notifications for successful form submissions (German messages)
+- ✅ **Job Modal erweitert**: Zeigt jetzt Anforderungen und Benefits
+- ✅ **Newsletter-Anmeldung**: Neue Section mit E-Mail-Formular und Backend-Integration
+- ✅ Submit Application Button funktioniert korrekt mit Erfolgs-Toast
 
 ## Tech Stack
 - Frontend: React 19, Tailwind CSS, Shadcn/UI, Lucide React
