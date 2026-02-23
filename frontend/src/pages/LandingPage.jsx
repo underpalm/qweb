@@ -457,7 +457,7 @@ export default function LandingPage() {
       </section>
 
       {/* Footer */}
-      <footer className="py-10 px-6 md:px-24 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0" data-testid="footer">
+      <footer className="py-6 px-6 md:px-24 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0" data-testid="footer">
         <div className="flex items-center space-x-3">
           <div className="w-5 h-5 bg-[#00FF88] rounded-full"></div>
           <span className="text-md font-black tracking-tighter uppercase">Qradient</span>
