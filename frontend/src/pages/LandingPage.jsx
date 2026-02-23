@@ -496,14 +496,14 @@ export default function LandingPage() {
       <section className="py-16 px-6 md:px-24 border-t border-slate-800 bg-[#0f172a]" data-testid="newsletter-section">
         <div className="max-w-4xl mx-auto text-center">
           <div className="section-tag mx-auto mb-6">Newsletter</div>
-          <h3 className="text-2xl md:text-3xl font-black mb-4">Bleiben Sie auf dem Laufenden.</h3>
+          <h3 className="text-2xl md:text-3xl font-black mb-4">Stay in the Loop.</h3>
           <p className="text-slate-400 mb-8 max-w-xl mx-auto">
-            Erhalten Sie die neuesten Insights zu KI-Trends, Innovationen und exklusive Einblicke direkt in Ihr Postfach.
+            Get the latest insights on AI trends, innovations, and exclusive updates delivered straight to your inbox.
           </p>
           <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto" data-testid="newsletter-form">
             <input 
               type="email" 
-              placeholder="Ihre E-Mail-Adresse"
+              placeholder="Your email address"
               value={newsletterEmail}
               onChange={(e) => setNewsletterEmail(e.target.value)}
               required
@@ -516,11 +516,11 @@ export default function LandingPage() {
               className="btn-primary px-8 py-4 whitespace-nowrap disabled:opacity-50"
               data-testid="newsletter-submit"
             >
-              {newsletterLoading ? 'Lädt...' : 'Abonnieren'}
+              {newsletterLoading ? 'Loading...' : 'Subscribe'}
             </button>
           </form>
           <p className="text-xs text-slate-500 mt-4">
-            Kein Spam. Jederzeit abmeldbar. Wir respektieren Ihre Privatsphäre.
+            No spam. Unsubscribe anytime. We respect your privacy.
           </p>
         </div>
       </section>
