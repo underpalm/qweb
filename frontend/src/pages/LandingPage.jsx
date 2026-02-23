@@ -573,6 +573,39 @@ export default function LandingPage() {
         </DialogContent>
       </Dialog>
 
+      {/* Service Detail Modal */}
+      <Dialog open={showServiceModal} onOpenChange={setShowServiceModal}>
+        <DialogContent className="bg-[#1a2233] border-slate-700 text-white max-w-3xl max-h-[90vh] overflow-y-auto p-0">
+          {selectedService && (
+            <>
+              <div className="h-64 overflow-hidden">
+                <img 
+                  src={selectedService.image} 
+                  alt={selectedService.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="p-8">
+                <div className="section-tag mb-4">{selectedService.tag}</div>
+                <h2 className="text-2xl md:text-3xl font-black mb-6 text-[#00FF88]">{selectedService.title}</h2>
+                <p className="text-slate-300 leading-relaxed text-base mb-8">
+                  {selectedService.fullDescription}
+                </p>
+                <a 
+                  href="#contact" 
+                  onClick={() => setShowServiceModal(false)}
+                  className="btn-primary inline-flex items-center gap-3"
+                  data-testid="service-modal-cta"
+                >
+                  <span>Start Your Project</span>
+                  <ArrowRight size={18} />
+                </a>
+              </div>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
+
       {/* Impressum Modal */}
       <Dialog open={showImpressumModal} onOpenChange={setShowImpressumModal}>
         <DialogContent className="bg-[#1a2233] border-slate-700 text-white max-w-2xl">
