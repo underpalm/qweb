@@ -113,14 +113,14 @@ export default function LandingPage() {
         body: JSON.stringify({ email: newsletterEmail }),
       });
       if (res.ok) {
-        toast.success('Newsletter-Anmeldung erfolgreich! Vielen Dank.');
+        toast.success('Successfully subscribed to our newsletter!');
         setNewsletterEmail('');
       } else {
         const data = await res.json();
-        toast.error(data.detail || 'Fehler bei der Newsletter-Anmeldung.');
+        toast.error(data.detail || 'Error subscribing to newsletter.');
       }
     } catch (error) {
-      toast.error('Fehler bei der Newsletter-Anmeldung.');
+      toast.error('Error subscribing to newsletter.');
     } finally {
       setNewsletterLoading(false);
     }
