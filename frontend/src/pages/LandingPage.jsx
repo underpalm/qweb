@@ -615,39 +615,42 @@ export default function LandingPage() {
       <Dialog open={showApplyModal} onOpenChange={setShowApplyModal}>
         <DialogContent className="bg-[#1a2233] border-slate-700 text-white max-w-lg">
           <DialogHeader>
-            <DialogTitle className="text-xl font-bold">Apply for {selectedJob?.title}</DialogTitle>
+            <DialogTitle className="text-xl font-bold text-[#00FF88]">Apply for {selectedJob?.title}</DialogTitle>
           </DialogHeader>
-          <form onSubmit={handleApplySubmit} className="mt-4 space-y-4" data-testid="apply-form">
-            <div className="contact-input-group">
+          <form onSubmit={handleApplySubmit} className="mt-6 space-y-5" data-testid="apply-form">
+            <div>
+              <label className="mono text-xs text-slate-400 uppercase tracking-widest block mb-2">Full Name *</label>
               <input 
                 type="text" 
-                className="contact-input" 
-                placeholder=" "
+                className="w-full px-4 py-3 bg-[#0f172a] border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-[#00FF88] transition-colors"
+                placeholder="Your name"
                 value={applyForm.name}
                 onChange={(e) => setApplyForm({...applyForm, name: e.target.value})}
                 required
+                data-testid="apply-name"
               />
-              <label className="contact-label">Name</label>
             </div>
-            <div className="contact-input-group">
+            <div>
+              <label className="mono text-xs text-slate-400 uppercase tracking-widest block mb-2">Email Address *</label>
               <input 
                 type="email" 
-                className="contact-input" 
-                placeholder=" "
+                className="w-full px-4 py-3 bg-[#0f172a] border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-[#00FF88] transition-colors"
+                placeholder="your@email.com"
                 value={applyForm.email}
                 onChange={(e) => setApplyForm({...applyForm, email: e.target.value})}
                 required
+                data-testid="apply-email"
               />
-              <label className="contact-label">Email</label>
             </div>
-            <div className="contact-input-group">
+            <div>
+              <label className="mono text-xs text-slate-400 uppercase tracking-widest block mb-2">Cover Letter / Message</label>
               <textarea 
-                className="contact-input min-h-[80px] resize-none" 
-                placeholder=" "
+                className="w-full px-4 py-3 bg-[#0f172a] border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-[#00FF88] transition-colors min-h-[100px] resize-none"
+                placeholder="Tell us why you're interested in this position..."
                 value={applyForm.message}
                 onChange={(e) => setApplyForm({...applyForm, message: e.target.value})}
+                data-testid="apply-message"
               />
-              <label className="contact-label">Message</label>
             </div>
             <div>
               <label className="mono text-xs text-slate-400 uppercase tracking-widest block mb-2">Upload CV</label>
@@ -656,9 +659,14 @@ export default function LandingPage() {
                 accept=".pdf,.doc,.docx"
                 onChange={(e) => setApplyForm({...applyForm, cv: e.target.files[0]})}
                 className="text-sm text-slate-400 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-[#00FF88] file:text-[#0f172a] file:font-bold file:cursor-pointer"
+                data-testid="apply-cv"
               />
             </div>
-            <button type="submit" className="btn-primary w-full mt-4">
+            <button 
+              type="submit" 
+              className="btn-primary w-full mt-4 py-4 text-base font-bold"
+              data-testid="apply-submit"
+            >
               Submit Application
             </button>
           </form>
