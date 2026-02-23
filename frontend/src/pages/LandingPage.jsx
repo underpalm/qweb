@@ -233,7 +233,12 @@ export default function LandingPage() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {services.map((service, index) => (
-            <div key={index} className="bg-[#1a2233] border-neon rounded-2xl overflow-hidden group" data-testid={`service-card-${index}`}>
+            <div 
+              key={index} 
+              className="bg-[#1a2233] border-neon rounded-2xl overflow-hidden group cursor-pointer" 
+              data-testid={`service-card-${index}`}
+              onClick={() => { setSelectedService(service); setShowServiceModal(true); }}
+            >
               <div className="h-48 overflow-hidden">
                 <img 
                   src={service.image} 
@@ -244,7 +249,12 @@ export default function LandingPage() {
               <div className="p-8">
                 <h3 className="text-xl md:text-2xl font-bold mb-4 text-[#00FF88]">{service.title}</h3>
                 <p className="text-slate-400 leading-relaxed">{service.description}</p>
-                <div className="mt-6 mono text-[10px] opacity-30 group-hover:opacity-100 transition-opacity">{service.tag}</div>
+                <div className="mt-6 flex justify-between items-center">
+                  <span className="mono text-[10px] opacity-30 group-hover:opacity-100 transition-opacity">{service.tag}</span>
+                  <span className="text-[#00FF88] text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1">
+                    Learn More <ArrowRight size={14} />
+                  </span>
+                </div>
               </div>
             </div>
           ))}
