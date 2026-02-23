@@ -494,19 +494,58 @@ export default function LandingPage() {
 
       {/* Job Detail Modal */}
       <Dialog open={showJobModal} onOpenChange={setShowJobModal}>
-        <DialogContent className="bg-[#1a2233] border-slate-700 text-white max-w-2xl">
+        <DialogContent className="bg-[#1a2233] border-slate-700 text-white max-w-3xl max-h-[90vh] overflow-y-auto">
           <DialogHeader>
             <DialogTitle className="text-2xl font-bold text-[#00FF88]">{selectedJob?.title}</DialogTitle>
           </DialogHeader>
           <div className="mt-4">
-            <p className="mono text-sm text-slate-400 mb-4">{selectedJob?.location} / {selectedJob?.type}</p>
-            <p className="text-slate-300 leading-relaxed mb-6">{selectedJob?.description}</p>
+            <div className="flex flex-wrap gap-3 mb-6">
+              <span className="px-3 py-1 bg-slate-800 rounded-full mono text-xs text-slate-300">{selectedJob?.location}</span>
+              <span className="px-3 py-1 bg-[#00FF88]/20 text-[#00FF88] rounded-full mono text-xs">{selectedJob?.location_type}</span>
+            </div>
+            
+            <p className="text-slate-300 leading-relaxed mb-8 text-lg">{selectedJob?.description}</p>
+            
+            {selectedJob?.requirements && selectedJob.requirements.length > 0 && (
+              <div className="mb-8">
+                <h4 className="text-lg font-bold mb-4 flex items-center gap-2">
+                  <span className="w-2 h-2 bg-[#00FF88] rounded-full"></span>
+                  Anforderungen
+                </h4>
+                <ul className="space-y-2">
+                  {selectedJob.requirements.map((req, idx) => (
+                    <li key={idx} className="text-slate-400 flex items-start gap-3">
+                      <span className="text-[#00FF88] mt-1">→</span>
+                      {req}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            
+            {selectedJob?.benefits && selectedJob.benefits.length > 0 && (
+              <div className="mb-8">
+                <h4 className="text-lg font-bold mb-4 flex items-center gap-2">
+                  <span className="w-2 h-2 bg-[#00FF88] rounded-full"></span>
+                  Benefits
+                </h4>
+                <ul className="space-y-2">
+                  {selectedJob.benefits.map((benefit, idx) => (
+                    <li key={idx} className="text-slate-400 flex items-start gap-3">
+                      <span className="text-[#00FF88] mt-1">✓</span>
+                      {benefit}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            
             <button 
               onClick={() => { setShowJobModal(false); setShowApplyModal(true); }}
-              className="btn-primary"
+              className="btn-primary w-full md:w-auto"
               data-testid="apply-btn"
             >
-              Apply Now
+              Jetzt Bewerben
             </button>
           </div>
         </DialogContent>
