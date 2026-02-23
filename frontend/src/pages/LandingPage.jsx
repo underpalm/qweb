@@ -439,27 +439,27 @@ export default function LandingPage() {
       </section>
 
       {/* Footer */}
-      <footer className="py-4 px-6 md:px-24 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center space-y-3 md:space-y-0" data-testid="footer">
-        <div className="flex items-center space-x-2">
-          <div className="w-4 h-4 bg-[#00FF88] rounded-full"></div>
-          <span className="text-sm font-black tracking-tighter uppercase">Qradient</span>
-          <span className="mono text-[9px] opacity-30 ml-1 tracking-widest hidden sm:inline">&copy; 2026</span>
+      <footer className="py-10 px-6 md:px-24 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0" data-testid="footer">
+        <div className="flex items-center space-x-3">
+          <div className="w-5 h-5 bg-[#00FF88] rounded-full"></div>
+          <span className="text-md font-black tracking-tighter uppercase">Qradient</span>
+          <span className="mono text-[10px] opacity-30 ml-2 tracking-widest hidden sm:inline">&copy; 2026 LABS</span>
         </div>
 
         {/* Social Media Links */}
-        <div className="flex space-x-6">
+        <div className="flex space-x-8">
           <a href="https://www.linkedin.com/company/qradient" target="_blank" rel="noopener noreferrer" className="text-[#00FF88] opacity-50 hover:opacity-100 transition-all transform hover:scale-110" data-testid="social-linkedin">
-            <Linkedin size={16} />
+            <Linkedin size={20} />
           </a>
           <a href="#" className="text-[#00FF88] opacity-50 hover:opacity-100 transition-all transform hover:scale-110" data-testid="social-twitter">
-            <Twitter size={16} />
+            <Twitter size={20} />
           </a>
           <a href="#" className="text-[#00FF88] opacity-50 hover:opacity-100 transition-all transform hover:scale-110" data-testid="social-facebook">
-            <Facebook size={16} />
+            <Facebook size={20} />
           </a>
         </div>
 
-        <div className="flex space-x-4 mono text-[9px] uppercase tracking-[0.15em] opacity-40">
+        <div className="flex space-x-6 mono text-[10px] uppercase tracking-[0.2em] opacity-40">
           <button onClick={() => setShowPrivacyModal(true)} className="hover:text-[#00FF88] transition-colors" data-testid="footer-privacy">Privacy</button>
           <button onClick={() => setShowImpressumModal(true)} className="hover:text-[#00FF88] transition-colors" data-testid="footer-imprint">Imprint</button>
         </div>
