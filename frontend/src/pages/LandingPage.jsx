@@ -492,6 +492,39 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* Newsletter Section */}
+      <section className="py-16 px-6 md:px-24 border-t border-slate-800 bg-[#0f172a]" data-testid="newsletter-section">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="section-tag mx-auto mb-6">Newsletter</div>
+          <h3 className="text-2xl md:text-3xl font-black mb-4">Bleiben Sie auf dem Laufenden.</h3>
+          <p className="text-slate-400 mb-8 max-w-xl mx-auto">
+            Erhalten Sie die neuesten Insights zu KI-Trends, Innovationen und exklusive Einblicke direkt in Ihr Postfach.
+          </p>
+          <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto" data-testid="newsletter-form">
+            <input 
+              type="email" 
+              placeholder="Ihre E-Mail-Adresse"
+              value={newsletterEmail}
+              onChange={(e) => setNewsletterEmail(e.target.value)}
+              required
+              className="flex-1 px-6 py-4 bg-[#1a2233] border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-[#00FF88] transition-colors"
+              data-testid="newsletter-email"
+            />
+            <button 
+              type="submit" 
+              disabled={newsletterLoading}
+              className="btn-primary px-8 py-4 whitespace-nowrap disabled:opacity-50"
+              data-testid="newsletter-submit"
+            >
+              {newsletterLoading ? 'Lädt...' : 'Abonnieren'}
+            </button>
+          </form>
+          <p className="text-xs text-slate-500 mt-4">
+            Kein Spam. Jederzeit abmeldbar. Wir respektieren Ihre Privatsphäre.
+          </p>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="py-6 px-6 md:px-24 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0" data-testid="footer">
         <div className="flex items-center space-x-3">
