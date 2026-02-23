@@ -17,6 +17,8 @@ export default function LandingPage() {
   const [showServiceModal, setShowServiceModal] = useState(false);
   const [contactForm, setContactForm] = useState({ name: '', email: '', subject: '', message: '' });
   const [applyForm, setApplyForm] = useState({ name: '', email: '', message: '', cv: null });
+  const [newsletterEmail, setNewsletterEmail] = useState('');
+  const [newsletterLoading, setNewsletterLoading] = useState(false);
 
   useEffect(() => {
     fetchJobs();
