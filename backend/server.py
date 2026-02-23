@@ -31,6 +31,17 @@ api_router = APIRouter(prefix="/api")
 
 # ==================== MODELS ====================
 
+# Newsletter Models
+class NewsletterCreate(BaseModel):
+    email: EmailStr
+
+class Newsletter(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    email: str
+    subscribed: bool = True
+    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+
 # Contact Message Models
 class ContactMessageCreate(BaseModel):
     name: str
