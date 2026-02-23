@@ -61,14 +61,14 @@ export default function LandingPage() {
         body: JSON.stringify(contactForm),
       });
       if (res.ok) {
-        toast.success('Nachricht erfolgreich gesendet! Wir melden uns bald bei Ihnen.');
+        toast.success('Message sent successfully! We will get back to you soon.');
         setContactForm({ name: '', email: '', subject: '', message: '' });
       } else {
         const data = await res.json();
-        toast.error(data.detail || 'Fehler beim Senden der Nachricht.');
+        toast.error(data.detail || 'Error sending message.');
       }
     } catch (error) {
-      toast.error('Fehler beim Senden der Nachricht.');
+      toast.error('Error sending message.');
     }
   };
 
