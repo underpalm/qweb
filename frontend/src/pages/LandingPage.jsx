@@ -227,13 +227,13 @@ export default function LandingPage() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-32 px-4 md:px-8 lg:px-12 fade-in-up" data-testid="services-section">
-        <div className="px-2 md:px-16">
+      <section id="services" className="py-32 px-4 fade-in-up" data-testid="services-section">
+        <div className="px-2 md:px-4">
           <div className="section-tag">Capabilities</div>
           <h2 className="text-4xl md:text-5xl font-black mb-16 tracking-tight">Intelligence as a Service.</h2>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
           {services.map((service, index) => (
             <div 
               key={index} 
@@ -315,7 +315,7 @@ export default function LandingPage() {
       </section>
 
       {/* Careers Section */}
-      <section id="careers" className="py-32 px-6 md:px-24 fade-in-up" data-testid="careers-section">
+      <section id="careers" className="pt-32 pb-16 px-6 md:px-24 fade-in-up" data-testid="careers-section">
         <div className="section-tag">Careers</div>
         <h2 className="text-4xl md:text-5xl font-black mb-16 tracking-tight">Join the Gradient.</h2>
         
