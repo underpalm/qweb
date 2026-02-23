@@ -59,31 +59,40 @@ export default function LandingPage() {
         body: JSON.stringify(contactForm),
       });
       if (res.ok) {
-        toast.success('Transmission erfolgreich! Wir melden uns bald.');
+        toast.success('Nachricht erfolgreich gesendet! Wir melden uns bald bei Ihnen.');
         setContactForm({ name: '', email: '', subject: '', message: '' });
+      } else {
+        const data = await res.json();
+        toast.error(data.detail || 'Fehler beim Senden der Nachricht.');
       }
     } catch (error) {
-      toast.error('Fehler beim Senden.');
+      toast.error('Fehler beim Senden der Nachricht.');
     }
   };
 
   const handleApplySubmit = async (e) => {
     e.preventDefault();
+    if (!selectedJob) return;
+    
     const formData = new FormData();
+    formData.append('job_id', selectedJob.id);
     formData.append('name', applyForm.name);
     formData.append('email', applyForm.email);
     formData.append('message', applyForm.message);
     if (applyForm.cv) formData.append('cv', applyForm.cv);
 
     try {
-      const res = await fetch(`${API_URL}/api/applications/upload?job_id=${selectedJob._id}`, {
+      const res = await fetch(`${API_URL}/api/applications/upload`, {
         method: 'POST',
         body: formData,
       });
       if (res.ok) {
-        toast.success('Bewerbung erfolgreich gesendet!');
+        toast.success('Bewerbung erfolgreich eingegangen! Wir melden uns bald bei Ihnen.');
         setShowApplyModal(false);
         setApplyForm({ name: '', email: '', message: '', cv: null });
+      } else {
+        const data = await res.json();
+        toast.error(data.detail || 'Fehler beim Senden der Bewerbung.');
       }
     } catch (error) {
       toast.error('Fehler beim Senden der Bewerbung.');
