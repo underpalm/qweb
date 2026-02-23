@@ -161,6 +161,42 @@ async def delete_contact(contact_id: str):
         raise HTTPException(status_code=404, detail="Contact not found")
     return {"message": "Contact deleted"}
 
+# ==================== NEWSLETTER ENDPOINTS ====================
+
+@api_router.post("/newsletter", response_model=Newsletter)
+async def subscribe_newsletter(input: NewsletterCreate):
+    # Check if email already exists
+    existing = await db.newsletter.find_one({"email": input.email}, {"_id": 0})
+    if existing:
+        if existing.get("subscribed"):
+            raise HTTPException(status_code=400, detail="Diese E-Mail ist bereits angemeldet.")
+        # Resubscribe
+        await db.newsletter.update_one(
+            {"email": input.email},
+            {"$set": {"subscribed": True}}
+        )
+        return Newsletter(**{**existing, "subscribed": True})
+    
+    newsletter = Newsletter(email=input.email)
+    doc = serialize_datetime(newsletter.model_dump())
+    await db.newsletter.insert_one(doc)
+    return newsletter
+
+@api_router.get("/newsletter", response_model=List[Newsletter])
+async def get_newsletter_subscribers():
+    subscribers = await db.newsletter.find({"subscribed": True}, {"_id": 0}).to_list(1000)
+    return [deserialize_datetime(s) for s in subscribers]
+
+@api_router.delete("/newsletter/{email}")
+async def unsubscribe_newsletter(email: str):
+    result = await db.newsletter.update_one(
+        {"email": email},
+        {"$set": {"subscribed": False}}
+    )
+    if result.matched_count == 0:
+        raise HTTPException(status_code=404, detail="E-Mail nicht gefunden")
+    return {"message": "Erfolgreich abgemeldet"}
+
 # ==================== JOBS ENDPOINTS ====================
 
 @api_router.post("/jobs", response_model=Job)
