@@ -1,7 +1,12 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, ArrowRight, Linkedin, Twitter, Facebook } from 'lucide-react';
+import { Menu, X, ArrowRight, Linkedin } from 'lucide-react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '../components/ui/dialog';
 import { toast } from 'sonner';
+import emailjs from '@emailjs/browser';
+
+const EMAILJS_SERVICE_ID = 'service_5l06wxr';
+const EMAILJS_TEMPLATE_ID = 'template_ek975q4';
+const EMAILJS_PUBLIC_KEY = 'cFzVAIA-ASWXD8nIC';
 
 const API_URL = process.env.REACT_APP_BACKEND_URL || '';
 
@@ -55,20 +60,21 @@ export default function LandingPage() {
   const handleContactSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch(`${API_URL}/api/contacts`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(contactForm),
-      });
-      if (res.ok) {
-        toast.success('Message sent successfully! We will get back to you soon.');
-        setContactForm({ name: '', email: '', subject: '', message: '' });
-      } else {
-        const data = await res.json();
-        toast.error(data.detail || 'Error sending message.');
-      }
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          name: contactForm.name,
+          time: new Date().toLocaleString('de-DE'),
+          message: `Email: ${contactForm.email}\nBetreff: ${contactForm.subject}\n\n${contactForm.message}`,
+          reply_to: contactForm.email,
+        },
+        EMAILJS_PUBLIC_KEY
+      );
+      toast.success('Message sent successfully! We will get back to you soon.');
+      setContactForm({ name: '', email: '', subject: '', message: '' });
     } catch (error) {
-      toast.error('Error sending message.');
+      toast.error('Error sending message. Please try again.');
     }
   };
 
@@ -129,6 +135,7 @@ export default function LandingPage() {
   const services = [
     {
       title: 'AI Integration & Automation',
+      niche: 'Specialized in regulated environments (FDA, MDR, ISO 13485)',
       description: 'Seamlessly integrate AI into your existing workflows and automate repetitive tasks to boost productivity across every department.',
       fullDescription: 'Our AI Integration & Automation service transforms your business operations by embedding intelligent automation into your existing infrastructure. We analyze your current workflows, identify automation opportunities, and implement AI-powered solutions that work seamlessly with your team. From intelligent document processing to automated decision-making systems, we help you achieve unprecedented efficiency gains while reducing operational costs.',
       tag: 'PROCESS_OPTIMIZATION_LOADED',
@@ -136,6 +143,7 @@ export default function LandingPage() {
     },
     {
       title: 'Data Analytics & Insights',
+      niche: 'For industrial and clinical data pipelines',
       description: 'Transform your raw data into actionable insights with our advanced analytics solutions and custom-trained machine learning models.',
       fullDescription: 'Unlock the hidden potential in your data with our comprehensive analytics solutions. We deploy advanced machine learning models and sophisticated data pipelines that transform raw information into strategic business intelligence. Our team builds custom dashboards, predictive models, and real-time analytics systems that give you a competitive edge in understanding market trends, customer behavior, and operational performance.',
       tag: 'DATA_MINING_ACTIVE',
@@ -143,6 +151,7 @@ export default function LandingPage() {
     },
     {
       title: 'Custom AI Solutions',
+      niche: 'Built for Pharma, MedTech and Defense',
       description: 'From enterprise chatbots to predictive forecasting models, we build tailored AI solutions that solve your unique business challenges.',
       fullDescription: 'Every business is unique, and so are its challenges. Our Custom AI Solutions service delivers bespoke artificial intelligence systems designed specifically for your needs. Whether you need an intelligent customer service chatbot, a sophisticated recommendation engine, or a complex predictive maintenance system, we architect and build solutions that align perfectly with your business objectives and technical requirements.',
       tag: 'CUSTOM_BUILD_READY',
@@ -150,6 +159,7 @@ export default function LandingPage() {
     },
     {
       title: 'Executive Bootcamps & Training',
+      niche: 'AI literacy for regulated industries',
       description: 'Empower your workforce with the skills to leverage AI. We provide high-level strategic training for leaders and technical workshops for teams.',
       fullDescription: 'Bridge the AI knowledge gap in your organization with our comprehensive training programs. Our Executive Bootcamps provide C-suite leaders with strategic AI insights, while our technical workshops equip your teams with hands-on skills in machine learning, data science, and AI implementation. We customize every training program to your industry and organizational needs, ensuring maximum relevance and impact.',
       tag: 'KNOWLEDGE_TRANSFER_SYNC',
@@ -170,7 +180,6 @@ export default function LandingPage() {
         <div className="hidden md:flex space-x-12 uppercase text-sm font-bold tracking-widest">
           <a href="#services" className="nav-link-dark" data-testid="nav-services">Services</a>
           <a href="#about" className="nav-link-dark" data-testid="nav-about">About</a>
-          <a href="#careers" className="nav-link-dark" data-testid="nav-careers">Join Us</a>
           <a href="#contact" className="nav-link-dark" data-testid="nav-contact">Contact</a>
         </div>
         
@@ -194,7 +203,6 @@ export default function LandingPage() {
           <div className="flex flex-col space-y-4 uppercase text-sm tracking-widest font-bold">
             <a href="#services" onClick={() => setMobileMenuOpen(false)} className="py-2 border-b border-white/10 hover:text-[#00FF88] transition-colors">Services</a>
             <a href="#about" onClick={() => setMobileMenuOpen(false)} className="py-2 border-b border-white/10 hover:text-[#00FF88] transition-colors">About</a>
-            <a href="#careers" onClick={() => setMobileMenuOpen(false)} className="py-2 border-b border-white/10 hover:text-[#00FF88] transition-colors">Join Us</a>
             <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="py-2 hover:text-[#00FF88] transition-colors">Contact</a>
           </div>
         </div>
@@ -202,19 +210,43 @@ export default function LandingPage() {
 
       {/* Hero Section */}
       <main className="relative min-h-screen flex flex-col justify-center px-6 md:px-24 pt-20 overflow-hidden fade-in-up" data-testid="hero-section">
-        {/* Blob Effects */}
-        <div className="blob w-96 h-96 bg-[#00FF88] opacity-10 absolute top-20 -right-20"></div>
-        <div className="blob w-64 h-64 bg-[#2C3E50] opacity-30 absolute bottom-10 left-10"></div>
+        {/* Background Video */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover z-0"
+        >
+          <source src="/space.mp4" type="video/mp4" />
+        </video>
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-[#0f172a]/80 z-0"></div>
 
         <div className="max-w-5xl z-10">
           <span className="mono text-[#00FF88] mb-6 block text-sm">// QUANTUM GRADIENT INTELLIGENCE</span>
           <h1 className="hero-title text-5xl sm:text-6xl md:text-8xl lg:text-9xl mb-8">
             Where <span className="italic font-light">Data</span> meets Intelligence.
           </h1>
-          <p className="text-lg md:text-2xl text-slate-400 max-w-3xl mb-12 font-light leading-relaxed">
-            Transforming complex raw data into precise AI decisions. 
-            <span className="text-white font-medium italic"> Automating workflows to drive tangible ROI for your enterprise.</span>
+          <p className="text-lg md:text-2xl text-slate-400 max-w-3xl mb-10 font-light leading-relaxed">
+            Qradient builds AI systems that pass regulatory audits, integrate into legacy infrastructure, and actually work in Industrial environments.
           </p>
+
+          <div className="mb-12">
+            <p className="mono text-[10px] font-bold tracking-[0.3em] uppercase text-slate-500 mb-5">Built with experts from</p>
+            <div className="flex items-center gap-6">
+              <div className="px-6 py-4 bg-white/10 backdrop-blur-sm rounded-xl border border-white/10">
+                <img src="/stanford.png" alt="Stanford" className="h-16 md:h-20 object-contain brightness-0 invert opacity-80" />
+              </div>
+              <div className="px-6 py-4 bg-white/10 backdrop-blur-sm rounded-xl border border-white/10">
+                <img src="/roche_logo.png" alt="Roche" className="h-16 md:h-20 object-contain brightness-0 invert opacity-80" />
+              </div>
+              <div className="px-6 py-4 bg-white/10 backdrop-blur-sm rounded-xl border border-white/10">
+                <img src="/rheinmetall.png" alt="Rheinmetall" className="h-16 md:h-20 object-contain brightness-0 invert opacity-80" />
+              </div>
+            </div>
+          </div>
+
           <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
             <a href="#contact" className="btn-primary text-center" data-testid="hero-cta">Start Your Project</a>
             <a href="#services" className="px-8 py-4 border border-slate-700 hover:border-[#00FF88] rounded-lg transition-all mono text-sm text-center">
@@ -224,41 +256,18 @@ export default function LandingPage() {
         </div>
       </main>
 
-      {/* Tools, Partnerships & Technologies Marquee */}
-      <section className="py-16 border-t border-b border-slate-800/50 overflow-hidden" data-testid="partners-section">
-        <h3 className="text-center mono text-xs font-bold tracking-[0.3em] uppercase text-slate-500 mb-8">
-          Tools, Partnerships & Technologies
-        </h3>
-        <div className="relative">
-          {/* Gradient Fade Left */}
-          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#0f172a] to-transparent z-10 pointer-events-none"></div>
-          {/* Gradient Fade Right */}
-          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#0f172a] to-transparent z-10 pointer-events-none"></div>
-          
-          <div className="flex animate-marquee-rtl">
-            {/* First set */}
-            <div className="flex items-center gap-16 md:gap-24 px-8 shrink-0">
-              <span className="text-2xl md:text-3xl font-black text-slate-600 hover:text-[#00FF88] transition-colors whitespace-nowrap">OpenAI</span>
-              <span className="text-2xl md:text-3xl font-black text-slate-600 hover:text-[#00FF88] transition-colors whitespace-nowrap">NVIDIA</span>
-              <span className="text-2xl md:text-3xl font-black text-slate-600 hover:text-[#00FF88] transition-colors whitespace-nowrap">Hugging Face</span>
-              <span className="text-2xl md:text-3xl font-black text-slate-600 hover:text-[#00FF88] transition-colors whitespace-nowrap">Google Cloud</span>
-              <span className="text-2xl md:text-3xl font-black text-slate-600 hover:text-[#00FF88] transition-colors whitespace-nowrap">AWS</span>
-              <span className="text-2xl md:text-3xl font-black text-slate-600 hover:text-[#00FF88] transition-colors whitespace-nowrap">Azure</span>
-              <span className="text-2xl md:text-3xl font-black text-slate-600 hover:text-[#00FF88] transition-colors whitespace-nowrap">Anthropic</span>
-              <span className="text-2xl md:text-3xl font-black text-slate-600 hover:text-[#00FF88] transition-colors whitespace-nowrap">Databricks</span>
+      {/* Partners & Tools Marquee */}
+      <section className="py-12 border-t border-slate-800/50 bg-[#0f172a] px-6 md:px-24">
+        <p className="mono text-[10px] font-bold tracking-[0.4em] uppercase text-slate-600 text-center mb-8">Partners & Tools</p>
+        <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-4">
+          {["OpenAI", "NVIDIA", "Anthropic", "Hugging Face", "Google Cloud", "AWS", "Azure", "Databricks"].map((name, i, arr) => (
+            <div key={i} className="flex items-center gap-8">
+              <span className="text-lg md:text-xl font-black text-slate-700 hover:text-slate-400 transition-colors duration-300 cursor-default tracking-tight">
+                {name}
+              </span>
+              {i < arr.length - 1 && <span className="text-[#00FF88]/30 text-xs">✦</span>}
             </div>
-            {/* Duplicate set for seamless loop */}
-            <div className="flex items-center gap-16 md:gap-24 px-8 shrink-0">
-              <span className="text-2xl md:text-3xl font-black text-slate-600 hover:text-[#00FF88] transition-colors whitespace-nowrap">OpenAI</span>
-              <span className="text-2xl md:text-3xl font-black text-slate-600 hover:text-[#00FF88] transition-colors whitespace-nowrap">NVIDIA</span>
-              <span className="text-2xl md:text-3xl font-black text-slate-600 hover:text-[#00FF88] transition-colors whitespace-nowrap">Hugging Face</span>
-              <span className="text-2xl md:text-3xl font-black text-slate-600 hover:text-[#00FF88] transition-colors whitespace-nowrap">Google Cloud</span>
-              <span className="text-2xl md:text-3xl font-black text-slate-600 hover:text-[#00FF88] transition-colors whitespace-nowrap">AWS</span>
-              <span className="text-2xl md:text-3xl font-black text-slate-600 hover:text-[#00FF88] transition-colors whitespace-nowrap">Azure</span>
-              <span className="text-2xl md:text-3xl font-black text-slate-600 hover:text-[#00FF88] transition-colors whitespace-nowrap">Anthropic</span>
-              <span className="text-2xl md:text-3xl font-black text-slate-600 hover:text-[#00FF88] transition-colors whitespace-nowrap">Databricks</span>
-            </div>
-          </div>
+          ))}
         </div>
       </section>
 
@@ -285,7 +294,8 @@ export default function LandingPage() {
                 />
               </div>
               <div className="p-8">
-                <h3 className="text-xl md:text-2xl font-bold mb-4 text-[#00FF88]">{service.title}</h3>
+                <h3 className="text-xl md:text-2xl font-bold mb-3 text-[#00FF88]">{service.title}</h3>
+                <p className="mono text-xs text-[#00FF88]/60 mb-4 tracking-wide">— {service.niche}</p>
                 <p className="text-slate-400 leading-relaxed">{service.description}</p>
                 <div className="mt-6 flex justify-between items-center">
                   <span className="mono text-[10px] opacity-30 group-hover:opacity-100 transition-opacity">{service.tag}</span>
@@ -303,21 +313,18 @@ export default function LandingPage() {
       <section id="about" className="py-32 px-6 md:px-24 bg-white text-black relative fade-in-up" data-testid="about-section">
         <div className="max-w-5xl">
           <div className="section-tag bg-slate-100 !text-slate-600">About Us</div>
-          <h2 className="text-3xl sm:text-4xl md:text-6xl font-black mb-12 tracking-tighter">Mathematical clarity. <br/>Human-centric vision.</h2>
-          
-          <div className="grid md:grid-cols-2 gap-12 mb-20">
-            <div>
-              <h4 className="mono text-xs font-bold uppercase mb-4 text-slate-400">Our Mission</h4>
-              <p className="text-lg md:text-xl font-light leading-relaxed">
-                To bridge the gap between raw information and intelligent action, stripping away complexity to reveal the most efficient path forward for every business.
-              </p>
-            </div>
-            <div>
-              <h4 className="mono text-xs font-bold uppercase mb-4 text-slate-400">Our Vision</h4>
-              <p className="text-lg md:text-xl font-light leading-relaxed">
-                A future where data isn't a burden, but a precision tool that empowers human creativity through the seamless integration of machine intelligence.
-              </p>
-            </div>
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-black mb-12 tracking-tighter">We come from the industry.</h2>
+
+          <div className="mb-20">
+            <p className="text-lg md:text-xl font-light leading-relaxed">
+              Our founder has worked as AI Research Scientist<br/>
+              at Roche Diagnostics and Rheinmetall — two of<br/>
+              the most demanding AI environments in the world.<br/><br/>
+              We know what it takes to build AI that works<br/>
+              where compliance, safety and reliability<br/>
+              are non-negotiable.<br/><br/>
+              That's why we started Qradient.
+            </p>
           </div>
 
           {/* Values Grid */}
@@ -344,57 +351,12 @@ export default function LandingPage() {
             </div>
           </div>
 
-          <blockquote className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tighter italic border-l-8 border-[#00FF88] pl-8 py-4">
+          <blockquote className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tighter">
             "Precision is the purest form of clarity."
           </blockquote>
         </div>
       </section>
 
-      {/* Careers Section */}
-      <section id="careers" className="pt-32 pb-16 px-6 md:px-24 fade-in-up" data-testid="careers-section">
-        <div className="section-tag">Careers</div>
-        <h2 className="text-4xl md:text-5xl font-black mb-16 tracking-tight">Join the Gradient.</h2>
-        
-        <div className="space-y-6">
-          {jobs.length > 0 ? jobs.map((job) => (
-            <div 
-              key={job._id} 
-              className="group p-6 md:p-8 border border-slate-800 rounded-xl job-card-dark flex flex-col md:flex-row justify-between items-start md:items-center cursor-pointer"
-              onClick={() => { setSelectedJob(job); setShowJobModal(true); }}
-              data-testid={`job-card-${job._id}`}
-            >
-              <div>
-                <h3 className="text-xl md:text-2xl font-bold">{job.title}</h3>
-                <p className="text-slate-400 mono text-sm mt-1">{job.location} / {job.type}</p>
-              </div>
-              <button className="mt-4 md:mt-0 text-[#00FF88] font-bold uppercase tracking-widest text-sm group-hover:underline flex items-center gap-2">
-                View Details <ArrowRight size={16} />
-              </button>
-            </div>
-          )) : (
-            <>
-              <div className="group p-6 md:p-8 border border-slate-800 rounded-xl job-card-dark flex flex-col md:flex-row justify-between items-start md:items-center">
-                <div>
-                  <h3 className="text-xl md:text-2xl font-bold">AI Solution Architect</h3>
-                  <p className="text-slate-400 mono text-sm mt-1">Remote / Full-time</p>
-                </div>
-                <button className="mt-4 md:mt-0 text-[#00FF88] font-bold uppercase tracking-widest text-sm group-hover:underline flex items-center gap-2">
-                  Apply Now <ArrowRight size={16} />
-                </button>
-              </div>
-              <div className="group p-6 md:p-8 border border-slate-800 rounded-xl job-card-dark flex flex-col md:flex-row justify-between items-start md:items-center">
-                <div>
-                  <h3 className="text-xl md:text-2xl font-bold">Data Strategy Consultant</h3>
-                  <p className="text-slate-400 mono text-sm mt-1">London / Hybrid</p>
-                </div>
-                <button className="mt-4 md:mt-0 text-[#00FF88] font-bold uppercase tracking-widest text-sm group-hover:underline flex items-center gap-2">
-                  Apply Now <ArrowRight size={16} />
-                </button>
-              </div>
-            </>
-          )}
-        </div>
-      </section>
 
       {/* Contact Section */}
       <section id="contact" className="py-24 md:py-40 px-6 md:px-24 bg-[#0f172a] relative overflow-hidden fade-in-up" data-testid="contact-section">
@@ -492,38 +454,6 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Newsletter Section */}
-      <section className="py-16 px-6 md:px-24 border-t border-slate-800 bg-[#0f172a]" data-testid="newsletter-section">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="section-tag mx-auto mb-6">Newsletter</div>
-          <h3 className="text-2xl md:text-3xl font-black mb-4">Stay in the Loop.</h3>
-          <p className="text-slate-400 mb-8 max-w-xl mx-auto">
-            Get the latest insights on AI trends, innovations, and exclusive updates delivered straight to your inbox.
-          </p>
-          <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto" data-testid="newsletter-form">
-            <input 
-              type="email" 
-              placeholder="Your email address"
-              value={newsletterEmail}
-              onChange={(e) => setNewsletterEmail(e.target.value)}
-              required
-              className="flex-1 px-6 py-4 bg-[#1a2233] border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-[#00FF88] transition-colors"
-              data-testid="newsletter-email"
-            />
-            <button 
-              type="submit" 
-              disabled={newsletterLoading}
-              className="btn-primary px-8 py-4 whitespace-nowrap disabled:opacity-50"
-              data-testid="newsletter-submit"
-            >
-              {newsletterLoading ? 'Loading...' : 'Subscribe'}
-            </button>
-          </form>
-          <p className="text-xs text-slate-500 mt-4">
-            No spam. Unsubscribe anytime. We respect your privacy.
-          </p>
-        </div>
-      </section>
 
       {/* Footer */}
       <footer className="py-6 px-6 md:px-24 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0" data-testid="footer">
@@ -537,12 +467,6 @@ export default function LandingPage() {
         <div className="flex space-x-8">
           <a href="https://www.linkedin.com/company/qradient" target="_blank" rel="noopener noreferrer" className="text-[#00FF88] opacity-50 hover:opacity-100 transition-all transform hover:scale-110" data-testid="social-linkedin">
             <Linkedin size={20} />
-          </a>
-          <a href="#" className="text-[#00FF88] opacity-50 hover:opacity-100 transition-all transform hover:scale-110" data-testid="social-twitter">
-            <Twitter size={20} />
-          </a>
-          <a href="#" className="text-[#00FF88] opacity-50 hover:opacity-100 transition-all transform hover:scale-110" data-testid="social-facebook">
-            <Facebook size={20} />
           </a>
         </div>
 
