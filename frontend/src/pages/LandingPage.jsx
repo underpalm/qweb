@@ -355,10 +355,10 @@ export default function LandingPage() {
 
       {/* Service Detail Modal */}
       <Dialog open={showServiceModal} onOpenChange={setShowServiceModal}>
-        <DialogContent className="bg-[#1a2233] border-slate-700 text-white max-w-3xl max-h-[90vh] overflow-y-auto p-0">
+        <DialogContent className="bg-[#1a2233] border-slate-700 text-white max-w-3xl max-h-[90vh] overflow-y-auto p-0 [&>button]:bg-black/60 [&>button]:text-white [&>button]:rounded-full [&>button]:p-1">
           {selectedService && (
             <>
-              <div className="h-64 overflow-hidden">
+              <div className="h-64 overflow-hidden relative">
                 <img
                   src={selectedService.image}
                   alt={selectedService.title}
