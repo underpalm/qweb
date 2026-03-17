@@ -36,7 +36,7 @@ export default function LandingPage() {
       niche: 'Specialized in High-Compliance (FDA, MDR, ISO 13485)',
       description: 'We eliminate operative inefficiency through intelligent system integration. We don\'t build isolated tools, but seamless AI-driven workflows that reduce friction in regulated environments to zero.',
       tag: 'FRICTION_MINIMIZED',
-      image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=2070&auto=format&fit=crop'
+      image: '/bild1.png'
     },
     {
       number: '02',
@@ -45,7 +45,7 @@ export default function LandingPage() {
       niche: 'For Industrial and Clinical Data Pipelines',
       description: 'In a world full of noise, we extract the signal. We transform complex clinical and industrial raw data into precise mathematical models that don\'t just describe what was, but predict what will be.',
       tag: 'SIGNAL_AMPLIFIED',
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2070&auto=format&fit=crop'
+      image: '/bild2.png'
     },
     {
       number: '03',
@@ -54,7 +54,7 @@ export default function LandingPage() {
       niche: 'High-Stakes Environments: Pharma, MedTech, Defense',
       description: 'When standard tools fail, we build proprietary intelligence. From autonomous agents to highly specialized language models, we build assets that mathematically secure your competitive advantage.',
       tag: 'ASSET_DEPLOYED',
-      image: 'https://images.unsplash.com/photo-1576671414121-aa2d60f7f4b9?q=80&w=2070&auto=format&fit=crop'
+      image: '/bild3.png'
     },
     {
       number: '04',
@@ -63,7 +63,7 @@ export default function LandingPage() {
       niche: 'AI Literacy for Decision Makers',
       description: 'We remove the blindfold. In our bootcamps, we transform uncertainty into strategic superiority. We empower leaders to recognize and navigate the gradient of their own organization.',
       tag: 'VISION_ALIGNED',
-      image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop'
+      image: '/bild4.png'
     }
   ];
 
@@ -183,27 +183,45 @@ export default function LandingPage() {
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-[#1a2233] border-neon rounded-2xl overflow-hidden group cursor-pointer"
+              className="relative rounded-2xl overflow-hidden group cursor-pointer border border-white/10 hover:border-[#00FF88]/40 transition-all duration-500"
+              style={{ height: '420px' }}
               data-testid={`service-card-${index}`}
               onClick={() => { setSelectedService(service); setShowServiceModal(true); }}
             >
-              <div className="h-48 overflow-hidden relative">
-                <img
-                  src={service.image}
-                  alt={service.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 brightness-75 contrast-110"
-                />
-                <span className="absolute top-4 left-4 mono text-[#00FF88]/50 text-xs font-bold tracking-widest">{service.number}</span>
-              </div>
-              <div className="p-8">
-                <p className="mono text-[#00FF88] text-xs tracking-widest uppercase mb-1">{service.subtitle}</p>
-                <h3 className="text-xl md:text-2xl font-bold mb-2">{service.title}</h3>
-                <p className="mono text-xs text-slate-500 mb-5 tracking-wide">— {service.niche}</p>
-                <p className="text-slate-400 leading-relaxed text-sm">{service.description}</p>
-                <div className="mt-6 flex justify-between items-center border-t border-slate-800 pt-4">
-                  <span className="mono text-[10px] text-[#00FF88]/40 group-hover:text-[#00FF88]/80 transition-colors">STATUS: {service.tag}</span>
-                  <span className="text-[#00FF88] text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1">
-                    <ArrowRight size={14} />
+              {/* Full-bleed image */}
+              <img
+                src={service.image}
+                alt={service.title}
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+
+              {/* Dark gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/10 group-hover:via-black/40 transition-all duration-500" />
+
+              {/* Number badge */}
+              <span className="absolute top-5 left-5 mono text-[#00FF88] text-xs font-bold tracking-widest bg-black/40 backdrop-blur-sm px-2 py-1 rounded">
+                {service.number}
+              </span>
+
+              {/* Status badge */}
+              <span className="absolute top-5 right-5 mono text-[10px] text-[#00FF88]/70 tracking-widest bg-black/40 backdrop-blur-sm px-2 py-1 rounded">
+                {service.tag}
+              </span>
+
+              {/* Text content at bottom */}
+              <div className="absolute bottom-0 left-0 right-0 p-7">
+                <p className="mono text-[#00FF88] text-xs tracking-widest uppercase mb-2">{service.subtitle}</p>
+                <h3 className="text-xl md:text-2xl font-black mb-1 leading-tight">{service.title}</h3>
+                <p className="mono text-xs text-slate-400 mb-3 tracking-wide">— {service.niche}</p>
+
+                {/* Description slides up on hover */}
+                <p className="text-slate-300 text-sm leading-relaxed max-h-0 overflow-hidden group-hover:max-h-24 transition-all duration-500 opacity-0 group-hover:opacity-100">
+                  {service.description}
+                </p>
+
+                <div className="flex items-center gap-2 mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <span className="text-[#00FF88] text-sm font-bold flex items-center gap-1">
+                    Explore <ArrowRight size={14} />
                   </span>
                 </div>
               </div>
