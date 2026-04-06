@@ -1,0 +1,107 @@
+/* App specific styles - most styles are in index.css */
+
+.App {
+    min-height: 100vh;
+}
+
+/* Section padding */
+section {
+    padding: 100px 20px;
+}
+
+/* Full-width section override - no horizontal padding */
+section.full-width-section {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* Border accent colors */
+.border-yellow-accent {
+    border-color: var(--accent-yellow);
+}
+
+.border-blue-accent {
+    border-color: var(--accent-blue);
+}
+
+.border-orange-accent {
+    border-color: var(--accent-orange);
+}
+
+/* Hover state for job cards */
+.job-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.job-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Modal overlay */
+.modal-overlay {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+}
+
+/* Form input styling */
+.form-input {
+    width: 100%;
+    padding: 1rem;
+    border-bottom: 2px solid #e5e5e5;
+    background: transparent;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    transition: border-color 0.3s ease;
+}
+
+.form-input:focus {
+    border-color: #1a1a1a;
+}
+
+.form-input::placeholder {
+    color: #9ca3af;
+}
+
+/* Admin table styling */
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.admin-table th {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    color: #9ca3af;
+}
+
+.admin-table tr:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Scroll indicator animation */
+@keyframes scrollIndicator {
+    0%, 100% {
+        transform: translateY(0) translateX(-50%);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(10px) translateX(-50%);
+        opacity: 0.5;
+    }
+}
+
+.scroll-indicator {
+    animation: scrollIndicator 2s ease-in-out infinite;
+}
