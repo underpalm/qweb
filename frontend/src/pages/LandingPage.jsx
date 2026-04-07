@@ -72,7 +72,7 @@ export default function LandingPage() {
         <div className="hidden md:flex space-x-12 uppercase text-sm font-bold tracking-widest">
           <a href="#services" className="nav-link-dark" data-testid="nav-services">Services</a>
           <a href="#about" className="nav-link-dark" data-testid="nav-about">About</a>
-          <a href="#contact" className="nav-link-dark" data-testid="nav-contact">Contact</a>
+          <a href="#contact" className="nav-link-dark" data-testid="nav-contact">Contact Us</a>
         </div>
 
         <div className="mono text-xs opacity-50 hidden lg:block">
@@ -95,7 +95,7 @@ export default function LandingPage() {
           <div className="flex flex-col space-y-4 uppercase text-sm tracking-widest font-bold">
             <a href="#services" onClick={() => setMobileMenuOpen(false)} className="py-2 border-b border-white/10 hover:text-[#00FF88] transition-colors">Services</a>
             <a href="#about" onClick={() => setMobileMenuOpen(false)} className="py-2 border-b border-white/10 hover:text-[#00FF88] transition-colors">About</a>
-            <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="py-2 hover:text-[#00FF88] transition-colors">Contact</a>
+            <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="py-2 hover:text-[#00FF88] transition-colors">Contact Us</a>
           </div>
         </div>
       )}
@@ -267,7 +267,7 @@ export default function LandingPage() {
 
           <a
             href="mailto:info@qradient.com"
-            className="btn-primary px-14 py-5 text-base inline-flex items-center mb-20"
+            className="btn-primary px-14 py-5 text-base inline-flex items-center"
             data-testid="contact-submit"
           >
             <span className="tracking-widest">Get Started</span>
@@ -278,20 +278,22 @@ export default function LandingPage() {
 
 
       {/* Footer */}
-      <footer className="px-6 md:px-24 py-5 border-t border-slate-800/60 bg-[#0f172a]" data-testid="footer">
-        <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-          <img src="/logo.png" alt="Qradient" className="h-10 object-contain opacity-80" />
+      <footer className="px-6 md:px-24 py-2 border-t border-slate-800/60 bg-[#0f172a]" data-testid="footer">
+        <div className="flex items-center justify-between">
+          <img src="/logo.png" alt="Qradient" className="h-5 object-contain brightness-0 invert" />
 
-          <div className="flex items-center gap-6 mono text-[10px] uppercase tracking-[0.2em] text-slate-600">
+          <div className="flex items-center gap-4 mono text-[9px] uppercase tracking-[0.2em] text-white">
             <button onClick={() => setShowPrivacyModal(true)} className="hover:text-[#00FF88] transition-colors" data-testid="footer-privacy">Privacy</button>
             <span>·</span>
             <button onClick={() => setShowImpressumModal(true)} className="hover:text-[#00FF88] transition-colors" data-testid="footer-imprint">Imprint</button>
             <span>·</span>
+            <button onClick={() => { window.location.href = 'mailto:info@qradient.com'; }} className="hover:text-[#00FF88] transition-colors">Contact Us</button>
+            <span>·</span>
             <span>&copy; 2026 Qradient</span>
           </div>
 
-          <a href="https://www.linkedin.com/company/qradient" target="_blank" rel="noopener noreferrer" className="text-slate-600 hover:text-[#00FF88] transition-colors" data-testid="social-linkedin">
-            <Linkedin size={16} />
+          <a href="https://www.linkedin.com/company/qradient" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#00FF88] transition-colors" data-testid="social-linkedin">
+            <Linkedin size={14} />
           </a>
         </div>
       </footer>

@@ -4,10 +4,7 @@
     min-height: 100vh;
 }
 
-/* Section padding */
-section {
-    padding: 100px 20px;
-}
+/* Section padding - only for sections without explicit Tailwind padding */
 
 /* Full-width section override - no horizontal padding */
 section.full-width-section {
