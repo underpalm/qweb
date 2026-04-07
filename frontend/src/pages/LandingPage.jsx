@@ -278,11 +278,11 @@ export default function LandingPage() {
 
 
       {/* Footer */}
-      <footer className="px-6 md:px-24 py-2 border-t border-slate-800/60 bg-[#0f172a]" data-testid="footer">
-        <div className="flex items-center justify-between">
+      <footer className="px-6 md:px-24 py-4 md:py-3 border-t border-slate-800/60 bg-[#0f172a]" data-testid="footer">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-0">
           <img src="/logo.png" alt="Qradient" className="h-5 object-contain brightness-0 invert" />
 
-          <div className="flex items-center gap-4 mono text-[9px] uppercase tracking-[0.2em] text-white">
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mono text-[10px] sm:text-[9px] uppercase tracking-[0.2em] text-white">
             <button onClick={() => setShowPrivacyModal(true)} className="hover:text-[#00FF88] transition-colors" data-testid="footer-privacy">Privacy</button>
             <span>·</span>
             <button onClick={() => setShowImpressumModal(true)} className="hover:text-[#00FF88] transition-colors" data-testid="footer-imprint">Imprint</button>
