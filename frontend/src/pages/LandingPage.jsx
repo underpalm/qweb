@@ -116,12 +116,12 @@ export default function LandingPage() {
         <div className="absolute inset-0 bg-[#0f172a]/80 z-0"></div>
 
         <div className="max-w-5xl z-10">
-          <span className="mono text-[#00FF88] mb-6 block text-sm">QUANTUM GRADIENT INTELLIGENCE</span>
           <h1 className="hero-title text-5xl sm:text-6xl md:text-8xl lg:text-9xl mb-8">
             Industrial <span className="italic font-light">Intelligence</span>. Built to Last.
           </h1>
           <p className="text-lg md:text-2xl text-slate-400 max-w-3xl mb-10 font-light leading-relaxed">
-            In a world of noise and uncertainty, Qradient reveals the path of steepest ascent.
+            8 out of 10 AI projects fail. Not because of the technology.<br />
+            Qradient shows regulated companies the path of steepest ascent, so they don't just understand AI, but implement it correctly.
           </p>
 
           <div className="flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-6">
