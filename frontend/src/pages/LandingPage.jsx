@@ -31,7 +31,7 @@ export default function LandingPage() {
   const services = [
     {
       number: '01',
-      title: 'AI Assessment',
+      title: 'AI Strategy Assessment',
       subtitle: 'Know exactly where you stand.',
       niche: 'Readiness before tooling',
       description: 'Most companies start with the wrong question: "Which AI tool should we buy?" The right question is: "Are we ready?" In 48 hours, we assess your organization across five dimensions: data quality, infrastructure, talent, governance and culture. You receive a clear report with a prioritized action plan.',
@@ -40,7 +40,7 @@ export default function LandingPage() {
     },
     {
       number: '02',
-      title: 'Executive Bootcamp',
+      title: 'Executive AI Bootcamp',
       subtitle: 'Turn strategy into action. In one day.',
       niche: 'AI Literacy for Decision Makers',
       description: 'Your leaders don\'t need another AI presentation. They need frameworks they can use on Monday morning. In one intensive day, we work through four frameworks: AI Maturity Assessment, Use Case Prioritization, Build/Buy/Partner Decision, and Leadership Plan. Every participant leaves with a personal AI roadmap, not a certificate.',
@@ -49,7 +49,7 @@ export default function LandingPage() {
     },
     {
       number: '03',
-      title: 'Team Bootcamp',
+      title: 'AI Team Bootcamp',
       subtitle: 'From Zero to AI Dream Team.',
       niche: 'Operations, IT, Compliance & Management',
       description: 'The gap between "we should do AI" and "we are doing AI" is not technology. It\'s alignment, use case clarity and a team that knows what to do next. In two days, your mixed team develops real use cases, calculates ROI, maps compliance requirements and builds a 6-month roadmap. Together. With their own data.',
